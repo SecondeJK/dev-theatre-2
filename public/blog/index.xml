@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on The Dev Theatre</title>
+    <link>https://example.com/blog/</link>
+    <description>Recent content in Blog on The Dev Theatre</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Virtual onboarding during the COVID-19 crisis - time costing</title>
+      <link>https://example.com/blog/onboarding-j24/</link>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/onboarding-j24/</guid>
+      <description>Almost every tech company is facing unprecedented challenges during the COVID-19 crisis, and at Jump24 it’s been no exception. The tech world has been switched to fully virtual overnight, which is bringing some very interesting debates forward (that I will discuss), most notably “how well is your business currently designed to deal with that?”
+I would argue that one of the biggest indicators of how well you’re set up to deal with this is onboarding new staff.</description>
+    </item>
+    
+    <item>
+      <title>Talk - The Politics of Tool Shaming</title>
+      <link>https://example.com/blog/tool-shaming/</link>
+      <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/tool-shaming/</guid>
+      <description>Most of us have heard it at some point. &amp;ldquo;WHAT? You use X framework/tool/OS/language?! So&amp;hellip; you&amp;rsquo;re a bad developer then?&amp;rdquo;
+I did not come from a Software Development background into this industry. I was an outsider, but it&amp;rsquo;s what I wanted to do my whole life. This is my story: how I refocused and retrained in my career to be confronted with a nightmare of gatekeeping, elistism and aggression. I saw what I thought was a problem, and I&amp;rsquo;d like to propose a solution.</description>
+    </item>
+    
+    <item>
+      <title>PsySh - More than just REPL</title>
+      <link>https://example.com/blog/psysh/</link>
+      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/psysh/</guid>
+      <description>Most backend developers know about interactive modes, that certainly isn’t a secret.
+jimseconde@jim-amd-u18$: php -a
+jimseconde@jim-amd-u18$: node
+jimseconde@jim-amd-u18$: python3
+All give you an active interpreter for that respective language. It’s used mostly for testing or confirming behaviour on the fly - ironically because you have a mountain of code in the middle of your app, your linter isn’t picking up on anything suspicious and exceptions are being thrown where you don’t want.</description>
+    </item>
+    
+    <item>
+      <title>Beginning Journeys</title>
+      <link>https://example.com/blog/beginning-journeys/</link>
+      <pubDate>Tue, 02 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/beginning-journeys/</guid>
+      <description>&lt;p&gt;Sparking up a career, a passion and a speciality.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to Build a Vue.js Shopify Frontend App with Polaris</title>
+      <link>https://example.com/blog/shopify-vue/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/shopify-vue/</guid>
+      <description>This article was originally written by me for Eastside Co&amp;rsquo;s blog: you can find the original here
+Note: this article is about building a Vue.js single page app on top of the Laravel app created in this article. Before reading this, make sure you’ve read the previous article about building an app with Laravel as we’ll be using that existing code.
+What is Vue.js? Vue.js is a JavaScript front end framework, comparable to similar frameworks such as React and originally derived from AngularJS.</description>
+    </item>
+    
+    <item>
+      <title>A Guide on How to Develop a Shopify App with Laravel &amp; PHP</title>
+      <link>https://example.com/blog/shopify-laravel/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/shopify-laravel/</guid>
+      <description>This article was originally written by me for Eastside Co&amp;rsquo;s blog: you can find the original here
+The Shopify platform contains a whole host of built in functionality. However, thanks to its fully featured REST and GraphQL API access, it also has a thriving app store with a huge range of plug-ins designed to enhance Shopify store functionality in many ways. I&amp;rsquo;ll talk you through a Shopify app development tutorial to help you get started on making your own Shopify app, using the Laravel PHP framework.</description>
+    </item>
+    
+    <item>
+      <title>Black Friday Retrospective - A Technical View</title>
+      <link>https://example.com/blog/black-friday/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/black-friday/</guid>
+      <description>This article was originally written by me for Eastside Co&amp;rsquo;s blog: you can find the original here
+“Right, what are we going to use&amp;hellip;Sentry? Pagerduty? Have we got an account? What do you mean, we’ve not set up auto-scaling groups? OK, have we got time to create them instead of manually spinning up AMI EC2s?”
+Black Friday has had a very patchy impact in the UK on the high street over the last decade, but where it is undoubtedly having the most influence is in the world of ecommerce - where the territory market restrictions are removed.</description>
+    </item>
+    
+  </channel>
+</rss>

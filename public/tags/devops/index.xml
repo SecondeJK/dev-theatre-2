@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on The Dev Theatre</title>
+    <link>https://example.com/tags/devops/</link>
+    <description>Recent content in devops on The Dev Theatre</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 29 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PsySh - More than just REPL</title>
+      <link>https://example.com/blog/psysh/</link>
+      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/psysh/</guid>
+      <description>Most backend developers know about interactive modes, that certainly isn’t a secret.
+jimseconde@jim-amd-u18$: php -a
+jimseconde@jim-amd-u18$: node
+jimseconde@jim-amd-u18$: python3
+All give you an active interpreter for that respective language. It’s used mostly for testing or confirming behaviour on the fly - ironically because you have a mountain of code in the middle of your app, your linter isn’t picking up on anything suspicious and exceptions are being thrown where you don’t want.</description>
+    </item>
+    
+    <item>
+      <title>Black Friday Retrospective - A Technical View</title>
+      <link>https://example.com/blog/black-friday/</link>
+      <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/blog/black-friday/</guid>
+      <description>This article was originally written by me for Eastside Co&amp;rsquo;s blog: you can find the original here
+“Right, what are we going to use&amp;hellip;Sentry? Pagerduty? Have we got an account? What do you mean, we’ve not set up auto-scaling groups? OK, have we got time to create them instead of manually spinning up AMI EC2s?”
+Black Friday has had a very patchy impact in the UK on the high street over the last decade, but where it is undoubtedly having the most influence is in the world of ecommerce - where the territory market restrictions are removed.</description>
+    </item>
+    
+  </channel>
+</rss>

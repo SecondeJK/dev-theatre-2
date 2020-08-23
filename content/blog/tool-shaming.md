@@ -4,6 +4,7 @@ description = "UK Tour on how to hamstring your business with elitism."
 author = "James Seconde"
 date = "2019-10-20"
 tags = ["culture"]
+categories = ["culture"]
 [[images]]
   src = "img/tool-shaming/phpsw.jpeg"
   alt = "James at PHPSW in Bristol"

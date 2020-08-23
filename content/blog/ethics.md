@@ -3,7 +3,8 @@ title = "A Fifth Pillar of Developer Relations"
 description = "On responsibilies in DevRel for Advocates."
 author = "James Seconde"
 date = "2020-08-23"
-tags = ["culture"]
+tags = ["culture", "devrel"]
+categories = ["culture", "devrel"]
 [[images]]
   src = "img/ethics/pillars.jpeg"
   alt = "Jim presenting"
@@ -16,11 +17,11 @@ There is a specific reason for the writing of this article, but I realised when 
 
 ### Hooray for Hugo
 
-So, the original reason for writing this is that returning visitors might have noticed a shiny new Dev Theatre site. It's written in Hugo, using the fantastically functional and beautiful theme `hugo-future-imperfect-slim`. To give a slight bit of gushing for the tech: I LOVE this JAMStack. Golang compiles this site at lightning speed - at least five times faster than what was a rather overengineered Gatsby codebase. I've found it to be a hugely positive experience, at a time when there have been few positives, so let's get this out of the way:
+So, the original reason for writing this is that returning visitors might have noticed a shiny new Dev Theatre site. It's written in [Hugo](https://gohugo.io), using the fantastically functional and beautiful theme `hugo-future-imperfect-slim`. To give a slight bit of gushing for the tech: I LOVE this JAMStack. Golang compiles this site at lightning speed - at least five times faster than what was a rather overengineered Gatsby codebase. I've found it to be a hugely positive experience, at a time when there have been few positives, so let's get this out of the way:
 
 ### Gatsby
 
-The reason the site is migrated is the whistleblowing from a contractor on the running of Gatsby as a company. You can find this here: https://twitter.com/tesseralis/status/1293649007739191296.
+The reason the site is migrated is the whistleblowing from a contractor on the running of [Gatsby](https://www.gatsbyjs.com) as a company. You can find this [here.](https://twitter.com/tesseralis/status/1293649007739191296)
 
 OK, OK: companies can be badly run, it happens. But what was it about this incident that made it any different, for me at least?
 
@@ -33,7 +34,7 @@ I'm always facinated with the response companies and/or individuals concoct when
 
 So in this case, with Gatsby, you'd have _thought_ that the alarm bells went off at GatsbyHQ, and the board would push the button to get a Public Relations consultancy to handle the hot potato.
 
-What actually happened was the CEO put out a statement saying, to words of this effect, "We are sorry that you feel offended, running this business is hard, we're launching a Cloud Product soon by the way, we are not actually going to do anything about the points raised because we don't care".
+What actually happened was the CEO put out a statement saying, to words of this effect: "We are sorry that you feel offended, running this business is hard, we're launching a Cloud Product soon by the way, we are not actually going to do anything about the points raised because we don't care".
 
 ### PR Damage is administered
 
@@ -41,35 +42,39 @@ I wonder what effect Gatsby thought it would have? Realistically, what happened 
 
 ### 2020: a year of confusion
 
-The Gatsby fallout is really just another tech botch to add to what has been a year of upheavel. We've had companies slow to act on COVID-19 (including in the DevRel space, companies that I shall leave nameless hiring in the middle of the pandemic with the requirement to be based in the Bay Area only, so presumably you start remote in San Francisco but when this all blows over you have to be on site which makes _absolutely no sense_), we've had a deluge of companies completely at odds about what "to do" about Black Lives Matter (the most baffling probably being TeeSpring pulling ANTIFA T-shirts because they're political, while continuing to sell QAnon and other far Right Wing stuff like White Pride merchandise which presumably doesn't qualify). 
+The Gatsby fallout is really just another tech botch to add to what has been a year of upheavel. We've had companies slow to act on COVID-19 (including in the DevRel space, companies that I shall leave nameless hiring in the middle of the pandemic with the requirement to be based in the Bay Area only, so presumably you start remote in San Francisco but when this all blows over you have to be on site which makes _absolutely no sense_), we've had a deluge of companies completely at odds about what "to do" about Black Lives Matter (the most baffling probably being **TeeSpring** pulling ANTIFA T-shirts because they're political, while continuing to sell QAnon and other far Right Wing stuff like White Pride merchandise which presumably doesn't qualify). 
 
-We also had the attempted launch of "Genderify", a seemingly pointless API that would attempt to guess your binary gender based on a name. One user was quick to point out that they were identifed as female, until they added "Dr" as a prefix, at which point it regendered them male. The product didn't last long.
+We also had the attempted launch of "**Genderify**", a seemingly pointless API that would attempt to guess your binary gender based on a name. One user was quick to point out that they were identifed as female, until they added "Dr" as a prefix, at which point it regendered them male. When challenged on this, the developers completely washed their hands of it and said it was simply the data doing the talking, not their product. Genderify not surprisingly didn't last long, presumably sinking with a wad of Ventre Capital money flushed down the toilet.
 
-In the Developer Relations space, Google decided to hide when one of it's Advocates blew the whistle on a harrowing description of violent abuse at the hands of one of their other employees, presuambly (at first) deemed too important to immediately fire.
+On a similar front in product, we had one of **Intercom**'s Product owners vomiting out an outrageous display of bravado on Twitter for a launch aimed directly at a competetor, Zendesk, about how terrible their product is and how amazing Intercom's was. This misplaced chunk of my-Dad-is-bigger-than-yours was at least correctly handled by Intercom, who pulled the thread and apologised for getting the tone wrong.
 
-Local to my tech ecosystem haunts, the Laravel framework found some new heroes in the form of the Larabelles usergroup, which was shot down by a load of predicible "replyguy" responses asking why there was a need for women to have their own usergroup, while seemingly unaware that the very nature of what they were doing was answering their own question. There has been a string of these recently, which in context this year isn't particularly more than any other year going back to the dawn of software development, but it still irks. One of the points Michelle Sadver, founder of PHPWomen raised was that these sorts of things are becoming more promentant as women and LGBT developers are now more confident to speak out against such bigotry.
+In the Developer Relations space, **Google** decided to hide when one of it's Advocates blew the whistle on a harrowing description of violent abuse at the hands of one of their other employees, presuambly (at first) deemed too important to immediately fire.
+
+Local to my tech ecosystem haunts, the **Laravel** framework found some new heroes in the form of the [Larabelles](https://www.larabelles.com) usergroup, which was shot down by a load of predicible "replyguy" responses asking why there was a need for women to have their own usergroup, while seemingly unaware that the very nature of what they were doing was answering their own question. There has been a string of these recently, which in context this year isn't particularly more than any other year going back to the dawn of software development, but it still irks. One of the points given to me by [Michelle Sanver](https://twitter.com/michellesanver), founder of PHPWomen raised was that these sorts of things are becoming more promentant as women and LGBT developers are now more confident to speak out against such bigotry.
 
 ### Developer Relations and PR as a fifth pillar
 
-So, all of this raises an important feature of DevRel that I've not actually seen discussed at great length: PR. There are "Four pillars" of DevRel commonly cited, identified by Matthew Revill's Hoopy DevRel agency in April 2019. These are:
+So, all of this raises an important feature of DevRel that I've not actually seen discussed at great length: PR. There are ["Four pillars" of DevRel](https://devrel.net/strategy-and-metrics/the-four-pillars-of-developer-relations) commonly cited, identified by Matthew Revell's Hoopy consultancy in April 2019. These are:
 
-* Outreach
-* Community
-* Product
-* Education & Support
+* **Outreach**
+* **Community**
+* **Product**
+* **Education & Support**
 
 What these incidents are bringing to light is that Developer Relations practioners are, in most cases, the face of the company they work for, and that is a _big_ resposibility. There is harmony on both sides when it comes to DevRel - the company have their role representing them on stage at conferences and meetups, while experienced Developer Advocates have become massive influencers within the world of software development, and use that to promote the company.
 
-Take, for instance, the approach of how Developer Advocates are presented in Mary Thengvall's DevRel Bible, "The Business Value of Developer Relations". It presents, on the cover, illustrated likenesses of leading figures in DevRel who are interviewed in the book. The superstars appear to be us - that's how much influence we're supposed to be wielding. I can give you a personal example of this in action - take, for instance, Cassidy Williams moving to Netlify. Her trademark humour started to be teased out of the Netlify corporate Twitter account, and it was clear without annoucing it that Cass was now using it. She's a well known name in tech, and so personally now I associate Netlify (which hosts this site) with Cassidy, her skills and her humour. Sometimes Advocates (depending on their roles) are even first line support for a lot of developers they've formed relationships with.
+Take, for instance, the approach of how Developer Advocates are presented in [Mary Thengvall](https://twitter.com/mary_grace)'s DevRel Bible, "[The Business Value of Developer Relations: How and Why Technical Communities Are Key To Your Success](https://www.amazon.co.uk/Business-Value-Developer-Relations-Communities/dp/1484237471/ref=sxts_sxwds-bia-wc-p13n1_0?crid=COMGI4AQQWVR&cv_ct_cx=the+business+value+of+developer+relations&dchild=1&keywords=the+business+value+of+developer+relations&pd_rd_i=1484237471&pd_rd_r=15180c46-5d57-42e2-b085-1d4c3785a9d1&pd_rd_w=2U0Zn&pd_rd_wg=CBh4K&pf_rd_p=9b1a9511-9af9-4d06-8643-d54ebec511ef&pf_rd_r=5TJR2SGRW4BCVJM2PQKT&psc=1&qid=1598194024&sprefix=the+business+value+of+%2Caps%2C200&sr=1-1-fdbae751-0fa5-4c0f-900b-865654896618)". It presents, on the cover, illustrated likenesses of leading figures in DevRel who are interviewed in the book. The superstars appear to be us - that's how much influence we're supposed to be wielding. 
+
+I can give you a personal example of this in action - take, for instance, [Cassidy Williams](https://cassidoo.co) moving to [Netlify](https://www.netlify.com). Her trademark humour started to be teased out of the Netlify corporate Twitter account, and it was clear without annoucing it that Cassidy was now using it. She's a well known name in tech, and so personally now I associate Netlify (which hosts this site) with Cassidy, her skills and her humour and openness to being approached for advice. Sometimes Advocates (depending on their roles) are even first line support for a lot of developers they've formed relationships with.
 
 That is indeed _a lot_ more power than sometimes we're aware of. If that's the case, we really need a Fifth Pillar:
 
-* Public Relations
-
+* **Public Relations**
 
 ### Kindness & Influence for good
 
-We need that pillar in our arsenal of skills because it's a bigger burden to carry than some of us might be aware of. Practicioners of DevRel do need to adhere to the "relations" part of the role, because if we misuse the platform we're building for ourselves then we're not advancing the industry as a whole - which is something that as influencers I believe we have the power to do. Misusing that platform or throwing controversy on top of doesn't go unnoticed: just ask "Uncle" Bob Martin or Richard Stallman.
+We need that pillar in our arsenal of skills because it's a bigger burden to carry than some of us might be aware of. Practicioners of DevRel do need to adhere to the "relations" part of the role, because if we misuse the platform we're building for ourselves then we're not advancing the industry as a whole - which is something that as influencers I believe we have the power to do. Misusing that platform or throwing controversy on top of it doesn't go unnoticed: just ask "Uncle" Bob Martin, Greg Sidelnikov or Richard Stallman.
 
-At NorDev Conference this year I saw Jon Skeet talk on Kindness, and I belive in Developer Relations empathy is a core skill we really should have. It goes hand in hand with the responsibilty of carrying that Public Relations profile of your employer - there's something less for them to worry about if you carry out your education to other developers with kindness, patience and understanding of others. That goes beyond patience with others' code skills, to helping others regardless of race, religion or gender identity at a employer that also understands the same core values that we do.
+At NorDev Conference this year I saw [Jon Skeet talk on Kindness](https://www.youtube.com/watch?v=2a8bSByZ3aE), and I belive in Developer Relations empathy is a core skill we really should all have. It goes hand in hand with the responsibilty of carrying that Public Relations profile of your employer - there's something less for them to worry about if you carry out your education to other developers with kindness, patience and understanding of others. This goes beyond just patience with others' code skills - we're leading by helping others regardless of race, religion or gender identity at a employer that also understands the same core values that we do. Hopefully.
 
+Who wants to help me write a curricuulm on Public Relations for Developer Relations? Because I sure can't!

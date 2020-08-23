@@ -4,6 +4,7 @@ description = "Sparking up a career, a passion and a speciality."
 author = "James Seconde"
 date = "2019-07-02"
 tags = ["culture"]
+categories = ["culture"]
 [[images]]
   src = "img/beginning-journeys/jimshadow.jpg"
   alt = "Jim presenting"

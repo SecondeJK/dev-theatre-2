@@ -4,6 +4,7 @@ description = ""
 author = "James Seconde"
 date = "2020-08-13"
 tags = ["php", "docker"]
+categories = ["php", "docker"]
 [[images]]
   src = "img/phpstorm-xdebug/phpstorm.jpeg"
   alt = "Jim presenting"

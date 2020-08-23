@@ -4,6 +4,7 @@ description = "Sometimes we really do over-engineer things."
 author = "James Seconde"
 date = "2019-01-11"
 tags = ["devops", "performance"]
+categories = ["devops", "performance"]
 [[images]]
   src = "img/black-friday/jimmonitors.jpg"
   alt = "James at the controls"

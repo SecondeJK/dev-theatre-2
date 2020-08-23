@@ -3,7 +3,8 @@ title = "How to Build a Vue.js Shopify Frontend App with Polaris"
 description = "Continuing to build integrations with Shopify, using Polaris & Vue.js"
 author = "James Seconde"
 date = "2019-06-17"
-tags = ["php", "javascript", "vue", "shopify"]
+tags = ["javascript", "vue", "shopify"]
+categories = ["javascript", "vue", "shopify"]
 [[images]]
   src = "img/shopify-vue/vuejs.png"
   alt = "VueJS logo on a laptop"

@@ -4,6 +4,7 @@ description = "Have you structured your business ready for the challenge?"
 author = "James Seconde"
 date = "2020-04-26"
 tags = ["culture"]
+categories = ["culture"]
 [[images]]
   src = "img/onboarding-j24/j24sofa.jpeg"
   alt = "Jump24 Offices"

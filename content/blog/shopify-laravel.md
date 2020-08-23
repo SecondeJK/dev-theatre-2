@@ -3,7 +3,8 @@ title = "A Guide on How to Develop a Shopify App with Laravel & PHP"
 description = "Basic building blocks for an integration with Shopify's API using Laravel."
 author = "James Seconde"
 date = "2019-05-30"
-tags = ["php", "shopify"]
+tags = ["php", "shopify", "laravel"]
+categories = ["php", "shopify", "laravel"]
 [[images]]
   src = "img/shopify-laravel/shopifyXlaravel.jpg"
   alt = "Shopify and Laravel logos on purple background"

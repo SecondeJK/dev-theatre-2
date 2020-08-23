@@ -4,6 +4,7 @@ description = "A wildly underused tool for a full application shell."
 author = "James Seconde"
 date = "2019-09-29"
 tags = ["php", "laravel", "devops"]
+categories = ["php", "laravel", "devops"]
 [[images]]
   src = "img/psysh/commandline.png"
   alt = "Image of command line ASCII as tools"

@@ -1,12 +1,13 @@
 +++
 title = "About Me"
-description = "You don't want an essay, so here's just a little bit about me."
 author = "James Seconde"
 date = "2020-08-20"
 layout = "about"
 +++
 
 ## Hi, I'm James!
+
+![James with his records](/img/jimrecords.jpg)
 
 From Theatre Graduate, to QA, to SQL data analyst, to Business Intelligence Developer, to Web Developer, to Developer Advocate. From the stage and back to the stage, I sit in a happy medium between tech and theatre. I also pretended to be a DJ on the way.
 

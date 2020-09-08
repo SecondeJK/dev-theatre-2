@@ -11,7 +11,7 @@ categories = ["php", "docker"]
   stretch = "stretchH"
 +++
 
-**This article was written for my employer [Jump24](https://jump24.co.uk/), you can read the original source article [here.](https://jump24.co.uk/journal/turbocharged-php-development-with-xdebug-docker-and-phpstorm/).
+**This article was written for my employer [Jump24](https://jump24.co.uk/), you can read the original source article [here.](https://jump24.co.uk/journal/turbocharged-php-development-with-xdebug-docker-and-phpstorm/)
 
 It all started out with that oh-so-modern cause of a community backlash: the humble tweet. 
 

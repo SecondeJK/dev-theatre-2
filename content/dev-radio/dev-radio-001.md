@@ -3,16 +3,15 @@ title = "The Dev Radio Episode 001"
 author = "James Seconde"
 date = "2019-06-01"
 [[images]]
-  src = "img/turntables.jpg"
-  alt = "Some turntables"
+  src = "img/tor.jpeg"
+  alt = "Never forgotten"
   stretch = "stretchH"
 +++
 <AUDIO
     style="width:100%;"
     controls
     src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+001.mp3">
-    Your browser does not support the
-    <code>audio</code> element.
+    https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+001.mp3
 </AUDIO>
 
 ### Tracklist

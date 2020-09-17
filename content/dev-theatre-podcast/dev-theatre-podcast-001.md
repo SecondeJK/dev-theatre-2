@@ -13,8 +13,7 @@ tags = ["javascript", "deno"]
     style="width:100%;"
     controls
     src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Theatre+1.mp3">
-    Your browser does not support the
-    <code>audio</code> element.
+    https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Theatre+1.mp3
 </AUDIO>
 
 Expanding on his talk "You Really Don't Need All That Javascript", listen to Stuart and I chat about 

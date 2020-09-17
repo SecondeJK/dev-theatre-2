@@ -3,8 +3,8 @@ title = "The Dev Radio Episode 006"
 author = "James Seconde"
 date = "2019-11-01"
 [[images]]
-  src = "img/turntables.jpg"
-  alt = "Some turntables"
+  src = "img/bastion.jpg"
+  alt = "Build that wall"
   stretch = "stretchH"
 +++
 <AUDIO

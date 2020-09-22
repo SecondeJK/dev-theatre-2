@@ -3,7 +3,7 @@ title = "The Dev Radio Episode 017"
 author = "James Seconde"
 date = "2020-09-22"
 [[images]]
-  src = "img/gunfingers.jpg"
+  src = "img/no9.jpeg"
   alt = "Gun fingers"
   stretch = "stretchH"
 +++

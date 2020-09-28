@@ -1,7 +1,7 @@
 +++
-title = "The Dev Radio Episode 017"
+title = "The Dev Radio Episode 018"
 author = "James Seconde"
-date = "2020-09-22"
+date = "2020-09-28"
 [[images]]
   src = "img/moodyjim.jpg"
   alt = "Shot like pretentious Berlin DJs"

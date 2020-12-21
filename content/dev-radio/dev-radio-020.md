@@ -3,8 +3,8 @@ title = "The Dev Radio Episode 020"
 author = "James Seconde"
 date = "2020-12-21"
 [[images]]
-  src = "img/g"
-  alt = ""
+  src = "img/home.jpeg"
+  alt = "The spectacular cast of Home and Away"
   stretch = "stretchH"
 +++
 <AUDIO

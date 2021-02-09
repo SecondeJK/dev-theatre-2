@@ -10,6 +10,7 @@ categories = ["culture","community","devrel"]
   alt = "Jump24 Offices"
   stretch = "Vertical"
 +++
+**This article was written for my employer Jump24, you can read the original source article ![here](https://jump24.co.uk/journal/running-and-speaking-at-online-events-what-weve-learned/).
 
 My start at Jump24 was never going to be straightforward – the United Kingdom was in full COVID-19 lockdown, bringing down tech meetups and conferences worldwide at the point when I was fully launching into a Developer Relations role, which would immediately have to be redefined to make our developer outreach work. But: we currently have a talk and live code demo session currently on tour – so how did we do it, and what experience have we gained? But first: some observations about the impact of COVID-19 on our communities.
 

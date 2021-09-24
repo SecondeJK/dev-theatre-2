@@ -13,7 +13,7 @@ From Theatre Graduate, to QA, to SQL data analyst, to Business Intelligence Deve
 
 I founded Birmingham's current PHP usergroup, brumPHP, and host/co-run a quarterly tech conference, Fusion Birmingham led by and founded by the Fusion Group.
 
-I do Developer Relations for the Laravel framework partner studio Jump24 in Birmingham, UK.
+I am the PHP Language specialist Developer Advocate for global communications giant Vonage.
 
 I write and speak on PHP, Developer Culture and DevOps Tooling.
 

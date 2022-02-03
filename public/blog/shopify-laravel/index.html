@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>A Guide on How to Develop a Shopify App with Laravel &amp; PHP - The Dev Theatre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.83.1" /><meta itemprop="name" content="A Guide on How to Develop a Shopify App with Laravel &amp; PHP">
+<meta itemprop="description" content="Basic building blocks for an integration with Shopify&#39;s API using Laravel."><meta itemprop="datePublished" content="2019-05-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-05-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="937"><meta itemprop="image" content="">
+<meta itemprop="keywords" content="php,shopify,laravel," /><meta property="og:title" content="A Guide on How to Develop a Shopify App with Laravel &amp; PHP" />
+<meta property="og:description" content="Basic building blocks for an integration with Shopify&#39;s API using Laravel." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devtheatre.net/blog/shopify-laravel/" /><meta property="og:image" content="" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-05-30T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-05-30T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+
+<meta name="twitter:title" content="A Guide on How to Develop a Shopify App with Laravel &amp; PHP"/>
+<meta name="twitter:description" content="Basic building blocks for an integration with Shopify&#39;s API using Laravel."/>
+<meta name="twitter:site" content="@SecondeJ"/>
+<link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/dev-radio/" class="nav link"><i class='fas fa-headphones-alt'></i> Dev Radio Podcast</a>
+        
+      
+        
+          
+          <a href="/dev-theatre-podcast/" class="nav link"><i class='fas fa-podcast'></i> Dev Theatre Podcast</a>
+        
+      
+        
+          
+          <a href="/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP&amp;url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f&amp;title=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f&amp;title=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f&amp;description=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by James%20Seconde&amp;body=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://devtheatre.net/img/main/logo.jpg" class="circle" width="100" alt="Jim by Norwich Artist Charli Vince" /></a>
+  <header>
+    <h1>James Seconde</h1>
+  </header>
+  <main>
+    <p>Developer Advocate | Speaker | Writer | Podcast Host </p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/shopify-laravel/">A Guide on How to Develop a Shopify App with Laravel &amp; PHP</a></h2>
+    
+    
+      <p>Basic building blocks for an integration with Shopify&#39;s API using Laravel.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2019-05-30 00:00:00 &#43;0000 UTC">May 30, 2019</time>
+    <p>James Seconde</p>
+    <p>5-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP&amp;url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f&amp;title=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f&amp;title=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f&amp;description=A%20Guide%20on%20How%20to%20Develop%20a%20Shopify%20App%20with%20Laravel%20%26%20PHP" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by James%20Seconde&amp;body=https%3a%2f%2fdevtheatre.net%2fblog%2fshopify-laravel%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/shopify-laravel/" class="image" style="--bg-image: url('https://devtheatre.net/img/shopify-laravel/shopifyXlaravel.jpg');">
+    <img class="stretchV" src="https://devtheatre.net/img/shopify-laravel/shopifyXlaravel.jpg" alt="Shopify and Laravel logos on purple background">
+  </a>
+      <p><em>This article was originally written by me for Eastside Co&rsquo;s blog: you can find the original <a href="https://eastsideco.com/blog/developing-shoth-laravel-php">here</a></em></p>
+<p>The Shopify platform contains a whole host of built in functionality. However, thanks to its fully featured REST and GraphQL API access, it also has a thriving app store with a huge range of plug-ins designed to enhance Shopify store functionality in many ways. I&rsquo;ll talk you through a Shopify app development tutorial to help you get started on making your own Shopify app, using the Laravel PHP framework.</p>
+<h2 id="what-is-a-shopify-app">What is a Shopify App?</h2>
+<p>A Shopify app is an externally-hosted service that has access to and can manipulate a Shopify store. For the most part, any feature you can see in the admin panel can be accessed and changed via the API - it can modify/create products, view or change orders and so on. Apps are a great way to automate common tasks such as bulk-editing collections or extending your store&rsquo;s functionality, like adding reviews to your products.
+The 2 Types of Shopify Apps</p>
+<p>Public apps can be submitted to the app store and used by multiple stores. To create and submit normal apps to the Shopify App Store, you need to own a Shopify Partner account.</p>
+<p>Private apps are usually used by a single store. In this article, we’ll be going through the steps for Shopify private app development, as they can be created by anyone with a Shopify store and require less steps to set up.</p>
+<h2 id="how-to-create-a-shopify-app-using-php">How to Create a Shopify App Using PHP</h2>
+<p>To follow this guide, you will need:</p>
+<ul>
+<li>A Shopify store you want to make an app for.</li>
+<li>PHP7.2 or higher and some familiarity with the language (<a href="https://www.php.net/supported-versions.php)">https://www.php.net/supported-versions.php)</a>.</li>
+<li>Some familiarity with a command line (cmd.exe/Powershell for Windows, bash/zsh/fish for MacOS and unix-like distributions).</li>
+<li>Some familiarity with Composer.</li>
+</ul>
+<h2 id="api-keys">API Keys</h2>
+<p>Let’s begin by creating a set of API keys for our app. Head to the Apps panel from the right hand navigation.</p>
+<p><img src="/img/shopify-laravel/-shopify-apps-panel-1.png" alt="Menu"></p>
+<p><img src="/img/shopify-laravel/private-apps-menu-2.png" alt="Private Apps Menu"></p>
+<p>Click ‘Create a new private app’ to get the prompt to name your app.</p>
+<p><img src="/img/shopify-laravel/create-private-app-3.png" alt="Create Private App"></p>
+<p>We&rsquo;ll leave the API dropdowns so that the app only has read access to your store.</p>
+<p><img src="/img/shopify-laravel/admin-api-4.png" alt="Admin API"></p>
+<p>Make a note of your new credentials. And with that step, it’s time to set up a local Laravel &amp; vue.js app.</p>
+<h2 id="setting-up-a-laravel-skeleton">Setting up a Laravel Skeleton</h2>
+<p>So, first we’re going to install a fresh Laravel skeleton app. You can do this via the Laravel installer (<a href="https://github.com/laravel/installer),">https://github.com/laravel/installer),</a> but the quickest route is to use Composer’s create project. Open up your command line and create a new project:</p>
+<p><code>composer create-project --prefer-dist laravel/laravel shopifyApp</code></p>
+<p>We’re going to use Twig (<a href="https://twig.symfony.com/">https://twig.symfony.com/</a>) instead of Laravel’s built-in Blade templating system for the front end, because the syntax Twig uses is based on Ruby’s Liquid templating system, used by Shopify on its platform. We’re going to be using Rob Crowe’s bridge connector for Laravel. Install Twig, following the instructions on the readme located here - <a href="https://github.com/rcrowe/TwigBridge">https://github.com/rcrowe/TwigBridge</a></p>
+<p>Now we have Twig, let’s get a page up and running by creating a new route, controller and Twig template. To create a new controller, in the command line run</p>
+<p><code>php artisan make:controller shopifyController</code></p>
+<p>Now we need to wire up a route, controller and view. Add a new route to <strong>routes/web.php</strong>:</p>
+<p><code>Route::get('/index', 'ShopifyController@index');</code></p>
+<p>Create the method in your controller, which will now be in
+<strong>/app/Http/Controllers/ShopifyController</strong>:</p>
+<pre><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+class ShopifyController extends Controller
+{
+  public function index()
+ {
+     return view('index');
+   }
+}
+</code></pre><p>The last part is to create the ‘index’ view - create a new file in: <strong>/resources/views called index.twig</strong>.</p>
+<h2 id="using-eastside-cos-api-wrapper">Using Eastside Co’s API Wrapper</h2>
+<p>We now need to use the Eastside Co Shopify API wrapper to bring us back some data to render. Eastside Co have already got a PHP package on packagist - it’s an API code wrapper for common REST API tasks with Shopify. Navigate into the ShopifyApp directory in your command line and install the Eastside Co API:</p>
+<p><code>composer require esc/shopify</code></p>
+<p>To enable the installed package, we need to add it to services and install assets. You do this by doing the following:</p>
+<p>Add <strong>\Esc\Shopify\Providers\APIServiceProvider::class</strong> into the providers array in <strong>/config/app.php</strong>.</p>
+<p>Run <strong>php artisan vendor:publish</strong> in the command line to copy the package assets into Laravel.</p>
+<p>We can now input the ShopifyAPI keys. Create a copy of your <strong>.env.dist</strong> and called it <strong>.env.</strong> In the .env file, add the keys that the API object will read in when the service is created in Laravel:</p>
+<pre><code>SHOPIFY_API_KEY = &lt;API Key&gt;
+SHOPIFY_API_SECRET = &lt;Shared Secret&gt;
+SHOPIFY_ACCESS_TOKEN = &lt;Password&gt;
+SHOPIFY_SHOP_DOMAIN=&lt;my-store-domain.myshopify.com&gt;
+</code></pre><h2 id="final-render">Final Render</h2>
+<p>Let’s get the data in the controller and pass it to the index Twig template we created. Change the controller’s index method to look like the following:</p>
+<pre><code>public function index() {
+    $shopifyApi = app(‘ShopifyAPI’);
+    $products = $shopifyApi-&gt;call('GET', 'admin/products.json&amp;page=1');
+    return view('index', (array) $products);
+}
+</code></pre><p>We’re now passing the first page of our store’s products to Twig, which we can now render out - open the resource/views/index.twig file we created. You can use a foreach loop in twig which operates the same as the php foreach function:</p>
+<pre><code>&lt;html&gt;
+   &lt;p&gt;This is an example Shopify APP page!&lt;/p&gt;
+   {% for product in products %}
+       This product is called: {{ product.title }}&lt;/br&gt;
+   {% endfor %}
+&lt;/html&gt;
+</code></pre><p>That’s it! Navigate to your route and the product titles will be rendered out by Twig.</p>
+<p>A repository of this basic scaffolding is available on our Github, at <a href="https://github.com/EastsideCo/blog-basic-laravel">https://github.com/EastsideCo/blog-basic-laravel</a></p>
+<p>Hopefully that helps give you some insight into the process behind creating a private Shopify app. If you have an idea for a private app but need developer support, get in touch - we have a whole team of developers dedicated to creating public and private Shopify apps for a whole range of functionality.</p>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/php/">php</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/shopify/">shopify</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/laravel/">laravel</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/php/">php</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/shopify/">shopify</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/laravel/">laravel</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/shopify-vue/" class="button left"><span>How to Build a Vue.js Shopify Frontend App with Polaris</span></a>
+    
+    
+      <a href="/blog/black-friday/" class="button right"><span>Black Friday Retrospective - A Technical View</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-021/" class="image" style="--bg-image: url('https://devtheatre.net/img/curve.jpeg');">
+    <img class="" src="https://devtheatre.net/img/curve.jpeg" alt="Photo of Curve">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-021/">The Dev Radio Episode 021</a></h2>
+          <time class="published" datetime="2021-01-07 00:00:00 &#43;0000 UTC">January 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-020/" class="image" style="--bg-image: url('https://devtheatre.net/img/home.jpeg');">
+    <img class="" src="https://devtheatre.net/img/home.jpeg" alt="The spectacular cast of Home and Away">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-020/">The Dev Radio Episode 020</a></h2>
+          <time class="published" datetime="2020-12-21 00:00:00 &#43;0000 UTC">December 21, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-019/" class="image" style="--bg-image: url('https://devtheatre.net/img/geocities.png');">
+    <img class="" src="https://devtheatre.net/img/geocities.png" alt="The internet I grew up with">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-019/">The Dev Radio Episode 019</a></h2>
+          <time class="published" datetime="2020-11-01 00:00:00 &#43;0000 UTC">November 1, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-018/" class="image" style="--bg-image: url('https://devtheatre.net/img/moodyjim.jpg');">
+    <img class="" src="https://devtheatre.net/img/moodyjim.jpg" alt="Shot like pretentious Berlin DJs">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-018/">The Dev Radio Episode 018</a></h2>
+          <time class="published" datetime="2020-09-28 00:00:00 &#43;0000 UTC">September 28, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-017/" class="image" style="--bg-image: url('https://devtheatre.net/img/no9.jpeg');">
+    <img class="" src="https://devtheatre.net/img/no9.jpeg" alt="Gun fingers">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-017/">The Dev Radio Episode 017</a></h2>
+          <time class="published" datetime="2020-09-22 00:00:00 &#43;0000 UTC">September 22, 2020</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/culture/">culture<span class="count">5</span></a>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/devrel/">devrel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/docker/">docker<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/shopify/">shopify<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/community/">community<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/javascript/">javascript<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/performance/">performance<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/vue/">vue<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>Hi! I'm James. I do Developer Relations and Dev Experience stuff for Jump24 in Birmingham, UK.</p>
+      <footer>
+        <a href="/about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 The Dev Theatre
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

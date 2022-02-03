@@ -2,84 +2,116 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on The Dev Theatre</title>
-    <link>https://example.com/tags/</link>
+    <link>https://devtheatre.net/tags/</link>
     <description>Recent content in Tags on The Dev Theatre</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devtheatre.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>community</title>
+      <link>https://devtheatre.net/tags/community/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/tags/community/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>culture</title>
-      <link>https://example.com/tags/culture/</link>
-      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
+      <link>https://devtheatre.net/tags/culture/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/culture/</guid>
+      <guid>https://devtheatre.net/tags/culture/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>devops</title>
-      <link>https://example.com/tags/devops/</link>
-      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      <title>devrel</title>
+      <link>https://devtheatre.net/tags/devrel/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/devops/</guid>
+      <guid>https://devtheatre.net/tags/devrel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>laravel</title>
-      <link>https://example.com/tags/laravel/</link>
-      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      <title>docker</title>
+      <link>https://devtheatre.net/tags/docker/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/laravel/</guid>
+      <guid>https://devtheatre.net/tags/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
-      <link>https://example.com/tags/php/</link>
-      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      <link>https://devtheatre.net/tags/php/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/php/</guid>
+      <guid>https://devtheatre.net/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deno</title>
+      <link>https://devtheatre.net/tags/deno/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/tags/deno/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>https://example.com/tags/javascript/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      <link>https://devtheatre.net/tags/javascript/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/javascript/</guid>
+      <guid>https://devtheatre.net/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://devtheatre.net/tags/devops/</link>
+      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>laravel</title>
+      <link>https://devtheatre.net/tags/laravel/</link>
+      <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shopify</title>
-      <link>https://example.com/tags/shopify/</link>
+      <link>https://devtheatre.net/tags/shopify/</link>
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/shopify/</guid>
+      <guid>https://devtheatre.net/tags/shopify/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vue</title>
-      <link>https://example.com/tags/vue/</link>
+      <link>https://devtheatre.net/tags/vue/</link>
       <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/vue/</guid>
+      <guid>https://devtheatre.net/tags/vue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>performance</title>
-      <link>https://example.com/tags/performance/</link>
+      <link>https://devtheatre.net/tags/performance/</link>
       <pubDate>Fri, 11 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/performance/</guid>
+      <guid>https://devtheatre.net/tags/performance/</guid>
       <description></description>
     </item>
     

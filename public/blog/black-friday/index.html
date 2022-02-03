@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Black Friday Retrospective - A Technical View - The Dev Theatre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.83.1" /><meta itemprop="name" content="Black Friday Retrospective - A Technical View">
+<meta itemprop="description" content="Sometimes we really do over-engineer things."><meta itemprop="datePublished" content="2019-01-11T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-01-11T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="725"><meta itemprop="image" content="">
+<meta itemprop="keywords" content="devops,performance," /><meta property="og:title" content="Black Friday Retrospective - A Technical View" />
+<meta property="og:description" content="Sometimes we really do over-engineer things." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devtheatre.net/blog/black-friday/" /><meta property="og:image" content="" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-01-11T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2019-01-11T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+
+<meta name="twitter:title" content="Black Friday Retrospective - A Technical View"/>
+<meta name="twitter:description" content="Sometimes we really do over-engineer things."/>
+<meta name="twitter:site" content="@SecondeJ"/>
+<link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/dev-radio/" class="nav link"><i class='fas fa-headphones-alt'></i> Dev Radio Podcast</a>
+        
+      
+        
+          
+          <a href="/dev-theatre-podcast/" class="nav link"><i class='fas fa-podcast'></i> Dev Theatre Podcast</a>
+        
+      
+        
+          
+          <a href="/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Black%20Friday%20Retrospective%20-%20A%20Technical%20View&amp;url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f&amp;title=Black%20Friday%20Retrospective%20-%20A%20Technical%20View" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f&amp;title=Black%20Friday%20Retrospective%20-%20A%20Technical%20View" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f&amp;description=Black%20Friday%20Retrospective%20-%20A%20Technical%20View" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by James%20Seconde&amp;body=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://devtheatre.net/img/main/logo.jpg" class="circle" width="100" alt="Jim by Norwich Artist Charli Vince" /></a>
+  <header>
+    <h1>James Seconde</h1>
+  </header>
+  <main>
+    <p>Developer Advocate | Speaker | Writer | Podcast Host </p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/black-friday/">Black Friday Retrospective - A Technical View</a></h2>
+    
+    
+      <p>Sometimes we really do over-engineer things.</p>
+    
+  </div>
+  <div class="meta">
+    <time datetime="2019-01-11 00:00:00 &#43;0000 UTC">January 11, 2019</time>
+    <p>James Seconde</p>
+    <p>4-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Black%20Friday%20Retrospective%20-%20A%20Technical%20View&amp;url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f&amp;title=Black%20Friday%20Retrospective%20-%20A%20Technical%20View" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f&amp;title=Black%20Friday%20Retrospective%20-%20A%20Technical%20View" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f&amp;description=Black%20Friday%20Retrospective%20-%20A%20Technical%20View" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by James%20Seconde&amp;body=https%3a%2f%2fdevtheatre.net%2fblog%2fblack-friday%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/black-friday/" class="image" style="--bg-image: url('https://devtheatre.net/img/black-friday/jimmonitors.jpg');">
+    <img class="stretchV" src="https://devtheatre.net/img/black-friday/jimmonitors.jpg" alt="James at the controls">
+  </a>
+      <p><em>This article was originally written by me for Eastside Co&rsquo;s blog: you can find the original <a href="https://eastsideco.com/blog/black-friday-technical-view">here</a></em></p>
+<p><strong>“Right, what are we going to use&hellip;Sentry? Pagerduty? Have we got an account? What do you mean, we’ve not set up auto-scaling groups? OK, have we got time to create them instead of manually spinning up AMI EC2s?”</strong></p>
+<p>Black Friday has had a very patchy impact in the UK on the high street over the last decade, but where it is undoubtedly having the most influence is in the world of ecommerce - where the territory market restrictions are removed. According to UK-based hosting provider UKFast, an estimated £1.4 billion was spent during Black Friday - but this is dwarfed by the $5 billion spent in the US.</p>
+<h2 id="aws-performance-statistics">AWS Performance Statistics</h2>
+<p>Our clients for whom we have created marketing, development and design solutions will be trading with the US, but the biggest hit for us at Eastside Co comes from our 9 apps, available in the Shopify app store. Of these, 16,194 installs are currently active - that’s a lot of US installs. One app alone, Hindsight, generates 13GB of data every day.</p>
+<p>Reading the statistics from AWS Cloudwatch makes for some interesting reading about the strain that was being put on our apps. These apps are written in Laravel PHP and vue.js, and are for the most part managed in terms of deployment pipelines by Forge. So, what can an app with this fairly straightforward infrastructure handle?</p>
+<p>Our peak HTTP requests on Black Friday (23rd November 2018) were hovering at around 2 million an hour from 2pm to 8pm GMT. From 22nd to 23rd November the CDN served the Shopify Embedded App SDK 1.88 million times, the total data serve totalling 126.75GB on that one file.</p>
+<p>Shopify themselves created a dashboard for the event, updated in real time every second. While we set up several screens to monitor Cloudwatch with some custom dashboards, we also kept an eye on the traffic. The moment captured in the image below, about 2pm on Black Friday, captures the scale of orders being processed - $933,973 of transactions per minute, 10,951 orders per minute. Considering that our various microservices and apps are hooked into so many Shopify merchant stores, you can imagine what the load balancers looked like.</p>
+<p><img src="img/black-friday/esc_trading.jpg" alt="Shopify Dashboard"></p>
+<h2 id="how-did-we-prepare-for-black-friday">How did we prepare for Black Friday?</h2>
+<p>So - to get to the point of of all this: what did we do to prepare? How did Black Friday play out?</p>
+<p>The TL:DR of this is: we didn’t need to do much. We set up a couple of monitors with custom dashboards on Cloudwatch with 40 or so alarms set up on ElastiCache, EC2 and our Aurora RDSs, and only scaled up one app manually - CartConvert.</p>
+<p>CartConvert is installed on 2,200 merchant stores at the time of writing; it runs a recommendation engine that generates API calls to Shopify wherever the code is called on your store - that’s a lot of calls - the solution? Scaling the API layer 3x and plugging them into the load balancer - that’s it. With 4x EC2s in an API layer handled by the load balancer and about 1,000 queries a second hitting Aurora, we spent Black Friday watching screens and fixing - well, nothing, as it turns out.</p>
+<h2 id="monitoring-black-friday">Monitoring Black Friday</h2>
+<p>So, we didn’t exactly go mad with the architecture. What about the monitoring? Again, we found it best to play it simple. I’ve seen Datadog, New Relic, PagerDuty, Sentry and Slack all hooked up to the point of information overload. You know the kind of stack - the one where one Slack channel is hooked up to Cloudwatch and an autolinter and a code quality scanner and Sentry. While there are many use cases for this amount of tooling, we kept it simple, just like how our AWS is configured: using Cloudwatch hooked up to our phones, changing thresholds for alarms on all our apps to compensate for the expected spike in CPU use.</p>
+<p>It’s so easy right now to get sucked up into a whirlpool of event-driven architecture, thousands of lambdas or microservices and auto scaled groups. It sounds so obvious, but at Eastside Co we found it far more productive to keep our architecture simple and focused. The result?</p>
+<p>A lot of happy merchants, and no burning servers. Here’s to next year!</p>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/devops/">devops</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/performance/">performance</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/devops/">devops</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/performance/">performance</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/shopify-laravel/" class="button left"><span>A Guide on How to Develop a Shopify App with Laravel &amp; PHP</span></a>
+    
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-021/" class="image" style="--bg-image: url('https://devtheatre.net/img/curve.jpeg');">
+    <img class="" src="https://devtheatre.net/img/curve.jpeg" alt="Photo of Curve">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-021/">The Dev Radio Episode 021</a></h2>
+          <time class="published" datetime="2021-01-07 00:00:00 &#43;0000 UTC">January 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-020/" class="image" style="--bg-image: url('https://devtheatre.net/img/home.jpeg');">
+    <img class="" src="https://devtheatre.net/img/home.jpeg" alt="The spectacular cast of Home and Away">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-020/">The Dev Radio Episode 020</a></h2>
+          <time class="published" datetime="2020-12-21 00:00:00 &#43;0000 UTC">December 21, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-019/" class="image" style="--bg-image: url('https://devtheatre.net/img/geocities.png');">
+    <img class="" src="https://devtheatre.net/img/geocities.png" alt="The internet I grew up with">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-019/">The Dev Radio Episode 019</a></h2>
+          <time class="published" datetime="2020-11-01 00:00:00 &#43;0000 UTC">November 1, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-018/" class="image" style="--bg-image: url('https://devtheatre.net/img/moodyjim.jpg');">
+    <img class="" src="https://devtheatre.net/img/moodyjim.jpg" alt="Shot like pretentious Berlin DJs">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-018/">The Dev Radio Episode 018</a></h2>
+          <time class="published" datetime="2020-09-28 00:00:00 &#43;0000 UTC">September 28, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-017/" class="image" style="--bg-image: url('https://devtheatre.net/img/no9.jpeg');">
+    <img class="" src="https://devtheatre.net/img/no9.jpeg" alt="Gun fingers">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-017/">The Dev Radio Episode 017</a></h2>
+          <time class="published" datetime="2020-09-22 00:00:00 &#43;0000 UTC">September 22, 2020</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/culture/">culture<span class="count">5</span></a>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/devrel/">devrel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/docker/">docker<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/shopify/">shopify<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/community/">community<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/javascript/">javascript<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/performance/">performance<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/vue/">vue<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>Hi! I'm James. I do Developer Relations and Dev Experience stuff for Jump24 in Birmingham, UK.</p>
+      <footer>
+        <a href="/about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 The Dev Theatre
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

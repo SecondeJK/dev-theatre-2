@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev-theatre-podcast on The Dev Theatre</title>
+    <link>https://devtheatre.net/dev-theatre-podcast/</link>
+    <description>Recent content in Dev-theatre-podcast on The Dev Theatre</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://devtheatre.net/dev-theatre-podcast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Dev Theatre Podcast Episode 001</title>
+      <link>https://devtheatre.net/dev-theatre-podcast/dev-theatre-podcast-001/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/dev-theatre-podcast/dev-theatre-podcast-001/</guid>
+      <description>https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Theatre+1.mp3 
+Expanding on his talk &amp;ldquo;You Really Don&amp;rsquo;t Need All That Javascript&amp;rdquo;, listen to Stuart and I chat about npm, dependency management, Deno, and standard libraries.</description>
+    </item>
+    
+  </channel>
+</rss>

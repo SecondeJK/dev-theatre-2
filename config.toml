@@ -4,7 +4,7 @@ baseurl                 = "https://devtheatre.net/"
 DefaultContentLanguage  = "en"
 title                   = "The Dev Theatre"
 theme                   = "hugo-future-imperfect-slim"
-paginate                = 3
+paginate                = 5
 disqusShortname         = ""
 googleAnalytics         = ""
 pluralizeListTitles     = false
@@ -43,8 +43,8 @@ disableLanguages        = []
     navbarTitle         = "The Dev Theatre"
     dynamicTitles       = true
     searchMenu          = true
-    shareMenu           = true
-    languageMenu        = true
+    shareMenu           = false
+    languageMenu        = false
 
   [params.intro]
     header                = "James Seconde"
@@ -117,21 +117,21 @@ disableLanguages        = []
     identifier        = "dev-theatre-podcast"
     url               = "/dev-theatre-podcast/"
     pre               = "<i class='fas fa-podcast'></i>"
-    weight            = 5
+    weight            = 6
 
   [[menu.main]]
     name              = "Dev Radio Podcast"
     identifier        = "dev-radio"
     url               = "/dev-radio/"
     pre               = "<i class='fas fa-headphones-alt'></i>"
-    weight            = 5
+    weight            = 7
 
   [[menu.main]]
     name              = "Contact"
     identifier        = "contact"
     url               = "/contact/"
     pre               = "<i class='far fa-envelope'></i>"
-    weight            = 6
+    weight            = 8
 
 [Languages]
 

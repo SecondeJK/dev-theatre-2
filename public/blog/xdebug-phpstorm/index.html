@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm - The Dev Theatre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.83.1" /><meta itemprop="name" content="Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm">
+<meta itemprop="description" content="**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap."><meta itemprop="datePublished" content="2020-08-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-08-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3070"><meta itemprop="image" content="">
+<meta itemprop="keywords" content="php,docker," /><meta property="og:title" content="Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm" />
+<meta property="og:description" content="**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devtheatre.net/blog/xdebug-phpstorm/" /><meta property="og:image" content="" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-08-13T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-13T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content=""/>
+
+<meta name="twitter:title" content="Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm"/>
+<meta name="twitter:description" content="**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap."/>
+<meta name="twitter:site" content="@SecondeJ"/>
+<link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          Blog
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/dev-radio/" class="nav link"><i class='fas fa-headphones-alt'></i> Dev Radio Podcast</a>
+        
+      
+        
+          
+          <a href="/dev-theatre-podcast/" class="nav link"><i class='fas fa-podcast'></i> Dev Theatre Podcast</a>
+        
+      
+        
+          
+          <a href="/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm&amp;url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f&amp;title=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f&amp;title=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f&amp;description=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by James%20Seconde&amp;body=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://devtheatre.net/img/main/logo.jpg" class="circle" width="100" alt="Jim by Norwich Artist Charli Vince" /></a>
+  <header>
+    <h1>James Seconde</h1>
+  </header>
+  <main>
+    <p>Developer Advocate | Speaker | Writer | Podcast Host </p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  <article class="post">
+    <header>
+  <div class="title">
+    
+      <h2><a href="/blog/xdebug-phpstorm/">Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-08-13 00:00:00 &#43;0000 UTC">August 13, 2020</time>
+    <p>James Seconde</p>
+    <p>15-Minute Read</p>
+  </div>
+</header>
+
+    <div id="socnet-share">
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm&amp;url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f&amp;title=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f&amp;title=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f&amp;description=Turbocharged%20PHP%20Development%20with%20Xdebug%2c%20Docker%20%26%20PHPStorm" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by James%20Seconde&amp;body=https%3a%2f%2fdevtheatre.net%2fblog%2fxdebug-phpstorm%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </div>
+    <div class="content">
+      <a href="/blog/xdebug-phpstorm/" class="image" style="--bg-image: url('https://devtheatre.net/img/phpstorm-xdebug/phpstorm.jpeg');">
+    <img class="" src="https://devtheatre.net/img/phpstorm-xdebug/phpstorm.jpeg" alt="Jim presenting">
+  </a>
+      <p>**This article was written for my employer <a href="https://jump24.co.uk/">Jump24</a>, you can read the original source article <a href="https://jump24.co.uk/journal/turbocharged-php-development-with-xdebug-docker-and-phpstorm/">here.</a></p>
+<p>It all started out with that oh-so-modern cause of a community backlash: the humble tweet.</p>
+<p><img src="https://cdn.jump24.co.uk/uploads/2020/08/tweet.png" alt="Derick Trolling people"></p>
+<p>Source: <a href="https://twitter.com/derickr/status/1274134192155131905">https://twitter.com/derickr/status/1274134192155131905</a></p>
+<p>Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, <strong>‘Do I need to revisit Xdebug?’</strong>, and I realised that I’d fallen into Derick’s trap. But think I did.</p>
+<p>Let’s clear up some existing thoughts I had on Xdebug – some readers might nod in agreement or have/had similar experiences:</p>
+<ul>
+<li>
+<p>Like many PHP developers with significant experience: <strong>I know of Xdebug</strong>. It’s been around years – I started writing PHP professionally in 2016, by which time Xdebug had existed for 14 years. It’s not like it was some obscure or new tool being talked about.</p>
+</li>
+<li>
+<p><strong>I’d tried Xdebug before at some point</strong> – I can’t recall when, and had an experience that left me thinking that understanding what you could do with it would take far too much time up for me to learn. Plus, things like custom “bookmark” browser extensions made it feel like you had to jump through a lot of hoops to use it effectively. A lot has changed since I started – I use Jetbrains PHPStorm as my IDE, and develop with Docker. It was a pain trying to set it up manually before, but what about now, where Xdebug runs a server on an IP, but it will be running in Docker?</p>
+</li>
+<li>
+<p><a href="https://devtheatre.net/psysh">I’ve previously written an article</a> on how superb PsySh is as an application’s command line. Given that when used as part of Laravel’s <code>tinker</code> it boots up the whole app into a REPL environment, does that render something like Xdebug somewhat redundant?</p>
+</li>
+<li>
+<p>Lastly, but most importantly for developers: why bother when you can use <code>var_dump()</code> or Symfony’s <code>dump()</code> or Laravel’s <code>dd()</code>?</p>
+</li>
+</ul>
+<p>These thoughts of mine were also circulated in others’ replies to the tweet, but it was when Tighten’s Matt Stauffer and Twilio’s Gary Hockin stepped in to offer livestreams with Derick to set it up that I took notice – the resulting content is now excellently documented at <a href="https://learnxdebug.com">https://learnxdebug.com</a> with others’ contributions.</p>
+<p>So, I thought: why not give it a go again? And so I did, going step by step though Gary and Derick’s video, with the goal to implement it into our development process for our Open Source project <a href="https://awe-der.net">Awe-der</a>.</p>
+<h2 id="how-hard-can-it-be">How hard can it be?</h2>
+<p>One of the things that most articles I’d read or tried to follow miss out one core thing that frustrated me: most have the “how”, but not the “why”. That is to say: what is this thing I’m doing and why does it work?</p>
+<p>Bearing that in mind, here is how I implemented the stack, step by step with a little bit more info than just your average set of instructions.</p>
+<h2 id="the-stack">The Stack</h2>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/f4x8yoqa5t001wq2khxv.png" alt="Logos of tech used, will read now"></p>
+<ul>
+<li>MacOS 10.15 (Catalina)</li>
+<li>PHPStorm 2020.1</li>
+<li>PHP 7.4.4 (from official PHP Dockerfile)</li>
+<li>Docker 19.03.8 (engine) 1.25.5 (compose)</li>
+</ul>
+<h3 id="step-one-installing-xdebug">Step One: Installing Xdebug</h3>
+<p>Part of what made the installation significantly easier for me was that the project it was being installed on was already using a Dockerfile as part of the stack. So, to install Xdebug, you need to include it with pecl (you can still -only- use pecl for operating system-level dependencies at the time of writing). Our project had this in our Dockerfile to install redis and imagick:</p>
+<pre><code>RUN docker-php-source extract &amp;&amp; \
+   pecl install redis &amp;&amp; \
+   pecl install imagick &amp;&amp; \
+   docker-php-ext-enable imagick &amp;&amp; \
+   docker-php-ext-enable redis &amp;&amp; \
+   docker-php-source delete
+</code></pre><p>It’s at this point you want to install it with pecl, so add pecl install Xdebug into the run commands for the container:</p>
+<pre><code>RUN docker-php-source extract &amp;&amp; \
+   pecl install redis &amp;&amp; \
+   pecl install xdebug &amp;&amp; \
+   pecl install imagick &amp;&amp; \
+   docker-php-ext-enable imagick &amp;&amp; \
+   docker-php-ext-enable redis &amp;&amp; \
+   docker-php-source delete
+</code></pre><p>You can see the actual live Dockerfile (with the correct install command) at: <a href="https://github.com/awe-der/aweder-core/blob/release/table-ordering/docker/php/Dockerfile">https://github.com/awe-der/aweder-core/blob/release/table-ordering/docker/php/Dockerfile</a></p>
+<h3 id="step-two-configuring-xdebug">Step Two: Configuring Xdebug</h3>
+<p>Before Docker, Xdebug was relatively straightforward to configure on a platform, in that it was a new set of the php.ini parameters – you’d either just edit the existing php.ini, or load in a custom ini or override. Now we’re running PHP and fpm in a container, so we need to inject the configuration in with docker-compose.</p>
+<p>First, create the file to inject and save it in the project root – let’s call it xdebug-local.ini.</p>
+<p>Here’s what to put in it:</p>
+<pre><code>zend_extension=xdebug
+xdebug.remote_enable=1
+xdebug.remote_autostart=1
+xdebug.remote_port=9001
+xdebug.remote_host=host.docker.internal
+</code></pre><p>I said this wouldn’t just be a copy and paste article, so: what are these parameters?</p>
+<p><code>Zend_extension</code> has always been the PHP ini file parameter name for adding in extensions – it hooks the pecl extension (or extensions installed with other tools like PEAR) installed to the runtime, so things like zip, redis, curl and the like use the same parameter to enable them.</p>
+<p><code>xdebug.remote_enable</code> and <code>xdebug.autostart</code> are more interesting. Remember me mentioning “bookmarklets” in the browser earlier? You have to use an extension to keep a server connection alive with your Xdebug session – for example, for Firefox:
+<a href="https://addons.mozilla.org/en-US/firefox/addon/xdebug-helper-for-firefox/">https://addons.mozilla.org/en-US/firefox/addon/xdebug-helper-for-firefox/</a></p>
+<p>Sound clunky? You bet. Is it required? Absolutely not. Enable remote triggering of the Xdebug server and set autostart to true when either a breakpoint is hit in the code or you’ve set the break to be at the entry point to your application’s code and: bingo. It triggers your debugging session. Do I wish I’d have known about this years ago? For sure.</p>
+<p><code>Xdebug.remote_port</code> has an interesting quirk in that if you don’t set the parameter, it defaults to port 9000. I guess it’s an interesting aspect that shows Xdebug’s history in that it was probably chosen as a default port before the CGI adopted replacement php-fpm used port 9000. So, it’s important to set the remote port to 9001 (or whichever free port you wish) to stop clashes.</p>
+<p><code>Xdebug.remote_host</code> is the point at which our Docker configuration starts making the process perhaps a little convoluted. In our case, we develop as a company with Macs, so it’s handy that Docker has a reserved handle (<code>host.docker.internal</code>) to route into the correct IP. Windows does the same at the time of writing, but Linux distributions might need a bit of research to get the correct address in here to connect into Docker.</p>
+<h3 id="step-three-inject-config-to-docker">Step Three: Inject Config to Docker</h3>
+<p>So, using <code>docker-compose</code>, we now inject the local ini file into the php container’s conf.d directory. The docker-compose file should look something like this:</p>
+<pre><code>php:
+   container_name: my_container
+   build: ./path/to/my/php/dockerfile
+   environment:
+       PHP_MEMORY_LIMIT: '128M'
+       DB_HOST: 'mysql'
+       DB_USER: 'root'
+       DB_PASSWORD: 'root'
+       DB_NAME: 'if_your_app_has_a_db'
+       PHP_IDE_CONFIG: 'serverName=myapp.url'
+   volumes:
+       - ./:/var/www/vhost/:cached
+       - ./xdebug-local.ini:/usr/local/etc/php/conf.d/xdebug-local.ini
+</code></pre><p>There are two things here to point out. Firstly, the docker volumes – it’s this line that’s going to enable Xdebug:</p>
+<pre><code>./xdebug-local.ini:/usr/local/etc/php/conf.d/xdebug-local.ini
+</code></pre><p>The second one was a big gotcha: PHPStorm will need to match the incoming Xdebug server request to the webserver that’s set up in the IDE.</p>
+<pre><code>PHP_IDE_CONFIG: 'serverName=myapp.url'
+</code></pre><p>I hadn’t actually set up the webserver on PHPStorm because I personally find a lot of the CLI and server setups for it extremely complex and hard to understand. But, because this environment variable is used to match to PHPStorm’s webserver setup, it cannot match the file structure without it – but more on that in a bit.</p>
+<p>It’s time to check that Xdebug is working: rebuild your Docker stack</p>
+<p><code>docker-compose build build &amp;&amp; docker-compose up -d</code></p>
+<p>And to check, debug by throwing phpinfo(); into an entrypoint to your app. Navigate to Xdebug on the page and you should see the following:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/6rr484iurlkfyga13bh2.png" alt="Xdebug config in phpinfo"></p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/dt4uk7s9ggozzaiq3fvf.png" alt="Xdebug set config values"></p>
+<h3 id="step-four-set-up-phpstorm">Step Four: Set up PHPStorm</h3>
+<p>I briefly mentioned that you need to set up your web server on PHPStorm first – so do that first. You can find pretty comprehensive and complete docs from Jetbrains on this here: <a href="https://www.jetbrains.com/help/phpstorm/creating-local-server-configuration.html#example1">https://www.jetbrains.com/help/phpstorm/creating-local-server-configuration.html#example1</a></p>
+<p>Now we get PHPStorm to listen to port 9001 which we set in the config. You can change that like so:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/dya8lazptc1msqbxmqb8.png" alt="PHPStorm Xdebug settings"></p>
+<p>Path mapping is important – PHPStorm has no way from the incoming request of knowing how the application is structured. Here’s an example of the configuration for Awe-der:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/9aw73oec5g6pjbv1a5a8.png" alt="Web server setup in PHPStorm"></p>
+<p>The absolute path on the server is what you need to change – make sure you change it to the root path served by your Docker stack (in our case, where nginx is serving the root of the application). This is an important step because PHPStorm assumes that the root directory from the incoming request is the public folder (if using either Symfony or Laravel). Make sure you also choose Xdebug as the debugger and use the appropriate HTTP port. Now, set PHPStorm to listen.</p>
+<p>It’s time for the moment of truth: you’re listening for connections, you’re mapped, you’ve setup the Xdebug server: showtime. Add a breakpoint in PHPStorm (preferablly at the entry point of your app, so you know it’ll get hit), fire a request in the browser and IF everything is OK you’ll get an incoming connection from Xdebug in the IDE. Happy days if you did, don’t despair if you don’t: there are a lot of gotchas here. If nothing happens, the other tutorials at <a href="https://learnxdebug.com/">https://learnxdebug.com/</a> will probably have the answer.</p>
+<h3 id="as-promised-turbocharged-development">As promised: Turbocharged Development</h3>
+<p>So, here’s what you actually came here for, right? As with debugging in other interpreted languages, your start point will be a breakpoint (you can actually set PHPStorm to hit a breakpoint whenever a new file entry point is detected as well).</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/2rhq99j1qie2tovw0t7e.png" alt="Code with breakpoint"></p>
+<p>Here’s a breakpoint set in our Awe-der project. We’re listening for connections – so, all being well we hit the Controller when loading the page, and hey presto! PHPStorm’s debugging pane appears.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/48qj6qupm2281fb7z5z8.png" alt="Debugging pane in PHPStorm"></p>
+<p>Now that we’re at a paused moment in the runtime, let’s check out what we can do.</p>
+<h3 id="console--evaluate-expression">Console / Evaluate expression</h3>
+<p>You get a console that can run executable PHP within the runtime you’re in. That is… absolutely magic. Here’s an example of using the console live within Xdebug that will save you a mountain of <code>var_dump()</code> calls:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/3ppexh58aw64wi1yfsah.png" alt="Console printed code"></p>
+<p>Putting a variable straight into the console will print it, in exactly the same way that Javascript does it with console.log in a browser console.</p>
+<p>We can change something on any variable at runtime in the console. Take for instance this line:</p>
+<p><code>$orderItem-&gt;fill($apiPayload);</code></p>
+<p>That’s Laravel’s Eloquent ORM. Why not see what happens at runtime when you do something else with it in the console?</p>
+<pre><code>$orderItem-&gt;toArray()
+‌array (
+  'order_id' =&gt; 1,
+  'inventory_id' =&gt; 2,
+  'variant_id' =&gt; 1,
+)
+
+$orderItem-&gt;fill(['order_id' =&gt; 234523523]);
+
+$orderItem-&gt;toArray()
+‌array (
+  'order_id' =&gt; 3333,
+  'inventory_id' =&gt; 2,
+  'variant_id' =&gt; 1,
+)
+</code></pre><p>Done. We’ve just messed around with an entity on the fly.</p>
+<p>The console has everything set &amp; booted (assuming you’re using Composer’s autoload) to the point it’s activated – so crucially local scope variables are available. You can also navigate the stack as well via. the frames in the debugger. Laravel has pretty detailed stack traces when you use Blade, but they’re not interactive ones like we can get in the IDE:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/z2xuaq0o3dncpmzm32gd.png" alt="Debugging pane with frames"></p>
+<p>This is next level debugging. You can navigate the frame pane to the left to view the executed stack. When you select a frame from it, the editor pane will navigate to the function call in the code and the variable pane will update to everything that has been set at that point. For big monolith stacks full of services and function calls all over the place, you’ve now got far more visibility. Pretty neat, huh?</p>
+<h3 id="conditional-breakpoints">Conditional Breakpoints</h3>
+<p>An underrated feature is the ability to set breakpoints conditionally. For an example, let’s say that we only want to trigger the breakpoint to debug if an incoming request to a controller has a “search” term set.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/jwrtk90s8r85l1bf4o5z.png" alt="Code with conditional breakpoint set"></p>
+<p>Done. Another joy of this in PHPStorm is that the Condition window behaves like any other console window, so you get application-wide autocompletion and local variable autocompletion.</p>
+<p>So, if we hit the URL:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/iedpdi8dd8yzgu3cl8f4.png" alt="Awe-der dashboard"></p>
+<p>Loads as expected, but add the search term in to the URL:</p>
+<p><code>https://awe-der.net/admin/dashboard?search=test</code></p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/u6yxx2hxmqnusaeyks8d.png" alt="Hit the breakpoint"></p>
+<h3 id="watchers">Watchers</h3>
+<p>Common debugging nightmares include mutable objects being hit -somewhere- in the stack. We have visibility of the stack, but that’s not much help when tracking a specific object. To set a watcher, add an expression in the watcher pane to the left. It will be evaluated with each step you trigger. A good example to see it in action would be the classic C loop:</p>
+<pre><code>public function testWatcher(): void
+{
+   $variableToWatch = 45;
+
+   for ($i = 1; $i &lt; 5; $i++) {
+       $variableToWatch = $variableToWatch + rand(0, 200);
+   }
+}
+</code></pre><p>Set a watcher on <code>$variableToWatch</code>, and check out the watcher doing it’s magic just like any Javascript browser watcher as you step over the code:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/9pm5krh0eukb6iketx4b.png" alt="Active watcher window"></p>
+<h3 id="step--cursor-controls">Step &amp; Cursor controls:</h3>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/s0znw0ps9avhlmem6z1x.png" alt="Cursor controls in PHPStorm"></p>
+<p>The five controls are as follows:</p>
+<p><strong>Step over</strong>: run to the next line of code</p>
+<p><strong>Step into</strong>: run into the next line, moving the cursor if entering a method call</p>
+<p><strong>Force step into</strong>: same as Step into, but runs with calls into vendor/3rd party code for deeper debugging</p>
+<p><strong>Step out</strong>: complete the current method and stop at the next line after the method that called it</p>
+<p><strong>Run to cursor</strong>: For me, this is the most important one, and I’ll tell you why:</p>
+<p>If you’re debugging something quite straightforward in that it’s your own code entirely, or something like the Slim framework with as little code as possible, stepping through the code is pretty logical. However, for those using a big framework – Laravel, Symfony, Cake, WordPress etc. there are calls, pipelines and event handlers all over the app. That magic has got to happen somehow, and if you try and step into it, you can see it in action.</p>
+<p>Don’t want to see all the handlers resolve? Cool. Move the cursor to the next line you want, so you can see the result piped into the variable frame. Hit run to cursor, job done.
+Probably the most important: modifying the output</p>
+<p>Modifying the output is, in my opinion, what makes Xdebug so powerful. We’ve looked at the fact that you can change variables and interact with the code at runtime, but what hasn’t been mentioned is that if you instruct the debugger to complete, the output is the changed output. To see it in action, here are two use cases:</p>
+<h3 id="blade-templates">Blade templates</h3>
+<p>We have a variable named <code>$dashboardMetrics</code> that’s passed into our template for rendering. Here it is rendered:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/ky5rm4fclg2gvllne4yf.png" alt="Dashboard on Aweder displaying the variable"></p>
+<p>And, with a breakpoint set in the debugger, here is the payload printed out at the point it’s about to be loaded into the template:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/as8g7p3ojnbwmtoiy0jg.png" alt="Breakpoint for debugging the variable"></p>
+<p>So, I’m going to change “Processing” to 999. Hitting the breakpoint again, I’ll use the console to set it:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/x97eltkbeh1lo6sv4b5x.png" alt="Console in PHPStorm changing the variable value"></p>
+<p>On the left hand side of the debugger pane you have the a “Resume Program” button. It allows you to complete the incoming request, so hit that and:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/owm63ku9dhnpy98bp1q9.png" alt="Updated dashboard with modified data"></p>
+<p>Request completed, you’ve modified runtime to change it.</p>
+<h3 id="api-calls">API calls</h3>
+<p>Exactly the same logic applies to changing the output of an API request. Here I’m using Postman to get an entity via. A UUID:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/8x8bpcya464g2ebr4l0d.png" alt="Custom request in Postman"></p>
+<p>Using the same method as the browser request, we’ll put a breakpoint into the API method and modify the output. Here’s the method response:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/hjpuxuim6qr1373rsx5z.png" alt="API response in codebase"></p>
+<p>(Protip for Laravel – don’t do this, always use Laravel Resources!)</p>
+<p>So, at the breakpoint let’s change the entity making the available_time now instead of the dummy date using the Carbon library:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/eq3f2tzjkrsgo7h2ycfo.png" alt="Console output after changing dates"></p>
+<p>Resume runtime, and check out the result from Postman:</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/i/9b1ynrr28hg5itdph6se.png" alt="Altered API response in Postman"></p>
+<p><strong>Magic.</strong></p>
+<p>I came into this with some thoughts and assumptions, so I’ll tie up my new experience with Xdebug in some key points that answer those questions.
+Conclusions</p>
+<p><strong>Q: Why use Xdebug when you can var_dump()?</strong></p>
+<p>A: Because it allows you to manipulate the runtime. If you use something like var_dump() you need to fire the CLI constantly or hit refresh on a browser over and over to get to the same point. Instead, you now have the chance to dynamically change and modify the stack – which is a big timesaver.</p>
+<p><strong>Q: You mentioned PsySh, why not use that?</strong></p>
+<p>A: Xdebug and PsySh are very different beasts. Whilst PsySh is labelled somewhat of a debugger, I don’t really treat it as such. It’s vital as a booted command line for your app, similar to manage.py for Django, but it’s not a pure debugger like Xdebug is.</p>
+<p><strong>Q: This is still hard to set up still, isn’t it?</strong></p>
+<p>A: I’d say it’s probably less of a mystery now that I’ve looked at it, and not as hard as most developers think. Plus the toolset for everyday use is so powerful, it’ll save you or your team a big chunk of valuable time and cognitive load.</p>
+<p><strong>Q: Are there downsides to using Xdebug?</strong></p>
+<p>A: The biggest downside I found was execution time. With the configuration in this article, the Xdebug server is always on – for a full PHPUnit test suite to run (if it’s pretty comprehensive) it will take a -big- performance hit. Luckily, there are workarounds for this in Docker, such as running commands with a custom ini to switch the Xdebug server off. If you’re in Production this is a real no-no.</p>
+<p>Overall, I’d say the tradeoff for time was well worth the effort. Something like this should be part of a developers’ tool chain – sure, it’s not always needed. If you’re doing an MVP in Laravel that’s mainly just CRUD operations, there’s probably not much justification for it.</p>
+<p>However, I’ve found that for many modern practises – comprehensive unit tests with large coverage from TDD, interface-based development and well-separated call stacks from considered single-responsibility principle controllers really do mean Xdebug gives you a decent edge.</p>
+<p>If you’re working on a legacy application in Zend Framework 2 or 10,000 line controllers in someone’s 2006 bespoke framework and you’re not using Xdebug, I’d come to the conclusion that you love the punishment, and like it that way, you massochist.</p>
+<p><strong>Q: What’s the outcome of trying it out?</strong></p>
+<p>A: Development with TDD and Xdebug felt incredibly empowering, so we’re going to look to make it part of the default development environment &amp; process.</p>
+<p><strong>Q: How much does Xdebug cost?</strong></p>
+<p>A: It’s free. Although, it depends on what the definition of “free” is – as it’s Derick’s Open Source project, it costs vast amounts of personal development time. If you want to try it out from reading this article (or you want to try it out with a different platform – check <a href="https://learnxdebug.com">https://learnxdebug.com</a> for other tutorials) then considering supporting his work:
+<a href="https://xdebug.org/support">https://xdebug.org/support</a></p>
+<p>Happy debugging!</p>
+
+    </div>
+    <footer>
+      <div class="stats">
+  
+    <ul class="categories">
+      
+        
+          <li><a class="article-terms-link" href="/categories/php/">php</a></li>
+        
+          <li><a class="article-terms-link" href="/categories/docker/">docker</a></li>
+        
+      
+    </ul>
+  
+  
+    <ul class="tags">
+      
+        
+          <li><a class="article-terms-link" href="/tags/php/">php</a></li>
+        
+          <li><a class="article-terms-link" href="/tags/docker/">docker</a></li>
+        
+      
+    </ul>
+  
+</div>
+
+    </footer>
+  </article>
+  
+    
+
+  
+  <div class="pagination">
+    
+      <a href="/blog/on-meritocracy/" class="button left"><span>Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm</span></a>
+    
+    
+      <a href="/blog/onboarding-j24/" class="button right"><span>Virtual onboarding during the COVID-19 crisis - time costing</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-021/" class="image" style="--bg-image: url('https://devtheatre.net/img/curve.jpeg');">
+    <img class="" src="https://devtheatre.net/img/curve.jpeg" alt="Photo of Curve">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-021/">The Dev Radio Episode 021</a></h2>
+          <time class="published" datetime="2021-01-07 00:00:00 &#43;0000 UTC">January 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-020/" class="image" style="--bg-image: url('https://devtheatre.net/img/home.jpeg');">
+    <img class="" src="https://devtheatre.net/img/home.jpeg" alt="The spectacular cast of Home and Away">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-020/">The Dev Radio Episode 020</a></h2>
+          <time class="published" datetime="2020-12-21 00:00:00 &#43;0000 UTC">December 21, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-019/" class="image" style="--bg-image: url('https://devtheatre.net/img/geocities.png');">
+    <img class="" src="https://devtheatre.net/img/geocities.png" alt="The internet I grew up with">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-019/">The Dev Radio Episode 019</a></h2>
+          <time class="published" datetime="2020-11-01 00:00:00 &#43;0000 UTC">November 1, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-018/" class="image" style="--bg-image: url('https://devtheatre.net/img/moodyjim.jpg');">
+    <img class="" src="https://devtheatre.net/img/moodyjim.jpg" alt="Shot like pretentious Berlin DJs">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-018/">The Dev Radio Episode 018</a></h2>
+          <time class="published" datetime="2020-09-28 00:00:00 &#43;0000 UTC">September 28, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-017/" class="image" style="--bg-image: url('https://devtheatre.net/img/no9.jpeg');">
+    <img class="" src="https://devtheatre.net/img/no9.jpeg" alt="Gun fingers">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-017/">The Dev Radio Episode 017</a></h2>
+          <time class="published" datetime="2020-09-22 00:00:00 &#43;0000 UTC">September 22, 2020</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/culture/">culture<span class="count">5</span></a>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/devrel/">devrel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/docker/">docker<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/shopify/">shopify<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/community/">community<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/javascript/">javascript<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/performance/">performance<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/vue/">vue<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>Hi! I'm James. I do Developer Relations and Dev Experience stuff for Jump24 in Birmingham, UK.</p>
+      <footer>
+        <a href="/about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 The Dev Theatre
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

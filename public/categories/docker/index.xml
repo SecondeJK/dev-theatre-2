@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on The Dev Theatre</title>
+    <link>https://devtheatre.net/categories/docker/</link>
+    <description>Recent content in docker on The Dev Theatre</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://devtheatre.net/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm</title>
+      <link>https://devtheatre.net/blog/on-meritocracy/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/blog/on-meritocracy/</guid>
+      <description>**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap.</description>
+    </item>
+    
+    <item>
+      <title>Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm</title>
+      <link>https://devtheatre.net/blog/xdebug-phpstorm/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/blog/xdebug-phpstorm/</guid>
+      <description>**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap.</description>
+    </item>
+    
+  </channel>
+</rss>

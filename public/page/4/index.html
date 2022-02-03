@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>The Dev Theatre</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="generator" content="Hugo 0.83.1" /><meta itemprop="name" content="The Dev Theatre">
+<meta itemprop="description" content=""><meta property="og:title" content="The Dev Theatre" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://devtheatre.net/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Dev Theatre"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@SecondeJ"/>
+<link rel="stylesheet" href="/css/bundle.min.6ad9eb85bff384c75937a02036b01425a2ca63f19a96535b8ba5b181db62a4b3.css" integrity="sha256-atnrhb/zhMdZN6AgNrAUJaLKY/GallNbi6WxgdtipLM="><link rel="stylesheet" href="/css/add-on.css">
+</head>
+
+  <body>
+    
+
+  <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;width:75%;">
+    <p style="text-align:center;">This message, related to the development of the theme, only displays on the
+      <code>localhost</code> homepage to notify you of any important theme changes.</p>
+      <hr>
+      <h5 style="color:#f4f4f4;text-align:center;"><i class="fas fa-exclamation-triangle"></i>Version 2.0.0 - July 20, 2020<i class="fas fa-exclamation-triangle"></i></h5>
+    <p>Below are the following changes that <em>could</em> be breaking changes for your site. For more details on any change, please refer to <a href="https://github.com/pacollins/hugo-future-imperfect-slim/pull/154">PR #154</a>.</p>
+<p>The major breaking change is:</p>
+<ol>
+<li>Users that have front matter that utilize <code>images</code> (backwards compatibility for <code>featured</code> and associated parameters still remains) <em>will</em> need to adjust from <code>[images]=&quot;SRC&quot;</code> to the new format.</li>
+</ol>
+<pre><code>[[images]]
+    src = &quot;&quot; // Link to image
+    alt = &quot;&quot; // Alt text for image
+    stretch = // Optional: See screenshots for referenced values and outcomes
+</code></pre><p>If you utilize any of the following, there <em>might</em> be a breaking:</p>
+<ol>
+<li>User custom templates <em>may</em> require adjustment.</li>
+<li>User custom i18n languages, or custom templates referencing i18n translations <em>may</em> require adjustment.</li>
+<li>User custom template for comments <em>will</em> require adjustment <em>if</em> it uses the theme&rsquo;s CSS and/or JS.</li>
+<li>User custom CSS <em>may</em> need to adjust due to a variety of class name changes and specificity changes.</li>
+</ol>
+<p>While I realize this is inconvenient, I hope that it is worth it to you in the long run. Thanks for using the theme, and feel free to submit issues as needed.</p>
+
+    <div style="text-align:center;">
+      <button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-bottom:1em;">Close Notification Until Next Update</button>
+    </div>
+    <script>
+      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '2.0.0') {
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+      function removeBox() {
+        window.localStorage.setItem('HFIS-version', '2.0.0');
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+    </script>
+  </div>
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/" class="nav">
+        
+          The Dev Theatre
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu menu">
+      
+        
+          
+          <a href="/" class="nav link"><i class='fa fa-home'></i> Home</a>
+        
+      
+        
+          
+          <a href="/about/" class="nav link"><i class='far fa-id-card'></i> About</a>
+        
+      
+        
+          
+          <a href="/blog/" class="nav link"><i class='far fa-newspaper'></i> Blog</a>
+        
+      
+        
+          
+          <a href="/categories/" class="nav link"><i class='fas fa-sitemap'></i> Categories</a>
+        
+      
+        
+          
+          <a href="/dev-radio/" class="nav link"><i class='fas fa-headphones-alt'></i> Dev Radio Podcast</a>
+        
+      
+        
+          
+          <a href="/dev-theatre-podcast/" class="nav link"><i class='fas fa-podcast'></i> Dev Theatre Podcast</a>
+        
+      
+        
+          
+          <a href="/contact/" class="nav link"><i class='far fa-envelope'></i> Contact</a>
+        
+      
+      <a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      <a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>
+    </menu>
+    <a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>
+    <a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="nav lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>
+  <menu id="lang-menu" class="flyout-menu menu">
+  <a href="#" lang="en" class="nav link active">English (en)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=The%20Dev%20Theatre&amp;url=https%3a%2f%2fdevtheatre.net%2f" target="_blank" rel="noopener" class="nav share-btn twitter">
+        <p>Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fdevtheatre.net%2f" target="_blank" rel="noopener" class="nav share-btn facebook">
+        <p>Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=https%3a%2f%2fdevtheatre.net%2f&amp;title=The%20Dev%20Theatre" target="_blank" rel="noopener" class="nav share-btn reddit">
+          <p>Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fdevtheatre.net%2f&amp;title=The%20Dev%20Theatre" target="_blank" rel="noopener" class="nav share-btn linkedin">
+            <p>LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fdevtheatre.net%2f&amp;description=The%20Dev%20Theatre" target="_blank" rel="noopener" class="nav share-btn pinterest">
+          <p>Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check%20out%20this%20post%20by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=https%3a%2f%2fdevtheatre.net%2f" target="_blank" class="nav share-btn email" data-proofer-ignore>
+          <p>Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro" >
+  <a href="/"><img src="https://devtheatre.net/img/main/logo.jpg" class="circle" width="100" alt="Jim by Norwich Artist Charli Vince" /></a>
+  <header>
+    <h1>James Seconde</h1>
+  </header>
+  <main>
+    <p>Developer Advocate | Speaker | Writer | Podcast Host </p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+  
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/dev-radio/dev-radio-012/">The Dev Radio Episode 012</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-05-01 00:00:00 &#43;0000 UTC">May 1, 2020</time>
+    <p>James Seconde</p>
+    <p>1-Minute Read</p>
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/dev-radio/dev-radio-012/" class="image" style="--bg-image: url('https://devtheatre.net/img/newhouse.jpg');">
+    <img class="" src="https://devtheatre.net/img/newhouse.jpg" alt="New House">
+  </a>
+    
+    <p><AUDIO
+style="width:100%;"
+controls
+src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+012.mp3">
+<a href="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+012.mp3">https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+012.mp3</a>
+</AUDIO></p>
+  </div>
+  <footer>
+    <a href="/dev-radio/dev-radio-012/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      <li>None</li>
+    </ul>
+  
+  
+    <ul class="tags">
+      <li>None</li>
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/dev-radio/dev-radio-011/">The Dev Radio Episode 011</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-04-01 00:00:00 &#43;0000 UTC">April 1, 2020</time>
+    <p>James Seconde</p>
+    <p>1-Minute Read</p>
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/dev-radio/dev-radio-011/" class="image" style="--bg-image: url('https://devtheatre.net/img/overlook.jpeg');">
+    <img class="" src="https://devtheatre.net/img/overlook.jpeg" alt="How&#39;d you like some ice cream doc?">
+  </a>
+    
+    <p><AUDIO
+style="width:100%;"
+controls
+src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+011.mp3">
+<a href="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+011.mp3">https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+011.mp3</a>
+</AUDIO></p>
+  </div>
+  <footer>
+    <a href="/dev-radio/dev-radio-011/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      <li>None</li>
+    </ul>
+  
+  
+    <ul class="tags">
+      <li>None</li>
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+    <article class="post">
+  <header>
+  <div class="title">
+    
+      <h2><a href="/dev-radio/dev-radio-010/">The Dev Radio Episode 010</a></h2>
+    
+    
+  </div>
+  <div class="meta">
+    <time datetime="2020-03-01 00:00:00 &#43;0000 UTC">March 1, 2020</time>
+    <p>James Seconde</p>
+    <p>1-Minute Read</p>
+  </div>
+</header>
+
+  <div class="content">
+    <a href="/dev-radio/dev-radio-010/" class="image" style="--bg-image: url('https://devtheatre.net/img/turntables.jpg');">
+    <img class="" src="https://devtheatre.net/img/turntables.jpg" alt="Some turntables">
+  </a>
+    
+    <p><AUDIO
+style="width:100%;"
+controls
+src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+010.mp3">
+<a href="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+010.mp3">https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+010.mp3</a>
+</AUDIO></p>
+  </div>
+  <footer>
+    <a href="/dev-radio/dev-radio-010/" class="button big">Read More</a>
+    <div class="stats">
+  
+    <ul class="categories">
+      <li>None</li>
+    </ul>
+  
+  
+    <ul class="tags">
+      <li>None</li>
+    </ul>
+  
+</div>
+
+  </footer>
+</article>
+
+  
+  <div class="pagination">
+    
+      <a href="/page/3/" class="button left"><span>Previous Page</span></a>
+    
+    
+      <a href="/page/5/" class="button right"><span>Next Page</span></a>
+    
+  </div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent Posts</h1>
+      </header>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-021/" class="image" style="--bg-image: url('https://devtheatre.net/img/curve.jpeg');">
+    <img class="" src="https://devtheatre.net/img/curve.jpeg" alt="Photo of Curve">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-021/">The Dev Radio Episode 021</a></h2>
+          <time class="published" datetime="2021-01-07 00:00:00 &#43;0000 UTC">January 7, 2021</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-020/" class="image" style="--bg-image: url('https://devtheatre.net/img/home.jpeg');">
+    <img class="" src="https://devtheatre.net/img/home.jpeg" alt="The spectacular cast of Home and Away">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-020/">The Dev Radio Episode 020</a></h2>
+          <time class="published" datetime="2020-12-21 00:00:00 &#43;0000 UTC">December 21, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-019/" class="image" style="--bg-image: url('https://devtheatre.net/img/geocities.png');">
+    <img class="" src="https://devtheatre.net/img/geocities.png" alt="The internet I grew up with">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-019/">The Dev Radio Episode 019</a></h2>
+          <time class="published" datetime="2020-11-01 00:00:00 &#43;0000 UTC">November 1, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-018/" class="image" style="--bg-image: url('https://devtheatre.net/img/moodyjim.jpg');">
+    <img class="" src="https://devtheatre.net/img/moodyjim.jpg" alt="Shot like pretentious Berlin DJs">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-018/">The Dev Radio Episode 018</a></h2>
+          <time class="published" datetime="2020-09-28 00:00:00 &#43;0000 UTC">September 28, 2020</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+          <a href="/dev-radio/dev-radio-017/" class="image" style="--bg-image: url('https://devtheatre.net/img/no9.jpeg');">
+    <img class="" src="https://devtheatre.net/img/no9.jpeg" alt="Gun fingers">
+  </a>
+        <header>
+          <h2><a href="/dev-radio/dev-radio-017/">The Dev Radio Episode 017</a></h2>
+          <time class="published" datetime="2020-09-22 00:00:00 &#43;0000 UTC">September 22, 2020</time>
+        </header>
+      </article>
+      
+      
+        <footer>
+          <a href="/blog/" class="button">See More</a>
+        </footer>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+          
+          <li>
+              <a href="/categories/culture/">culture<span class="count">5</span></a>
+          
+          <li>
+              <a href="/categories/php/">php<span class="count">4</span></a>
+          
+          <li>
+              <a href="/categories/devops/">devops<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/devrel/">devrel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/docker/">docker<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/laravel/">laravel<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/shopify/">shopify<span class="count">2</span></a>
+          
+          <li>
+              <a href="/categories/community/">community<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/javascript/">javascript<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/performance/">performance<span class="count">1</span></a>
+          
+          <li>
+              <a href="/categories/vue/">vue<span class="count">1</span></a>
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  
+    <section id="mini-bio">
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>Hi! I'm James. I do Developer Relations and Dev Experience stuff for Jump24 in Birmingham, UK.</p>
+      <footer>
+        <a href="/about" class="button">Learn More</a>
+      </footer>
+    </section>
+  
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+
+        <li><a href="//github.com/SecondeJK" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/secondej" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/SecondeJ" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="mailto:jim@thefusionhub.co.uk" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    © 2021 The Dev Theatre
+      <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.83.1' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      <script src="/js/highlight.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script><script src="/js/bundle.min.0d5e8ac1d85d8099bdf7808daad895a475c163efad3542448e3f7b31852b6ad5.js" integrity="sha256-DV6KwdhdgJm994CNqtiVpHXBY&#43;&#43;tNUJEjj97MYUratU="></script>
+    <script src="/js/add-on.js"></script>
+    </div>
+  </body>
+</html>

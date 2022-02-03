@@ -2,21 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>php on The Dev Theatre</title>
-    <link>https://example.com/tags/php/</link>
+    <link>https://devtheatre.net/tags/php/</link>
     <description>Recent content in php on The Dev Theatre</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 29 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://devtheatre.net/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm</title>
+      <link>https://devtheatre.net/blog/on-meritocracy/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/blog/on-meritocracy/</guid>
+      <description>**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap.</description>
+    </item>
     
-	<atom:link href="https://example.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>Turbocharged PHP Development with Xdebug, Docker &amp; PHPStorm</title>
+      <link>https://devtheatre.net/blog/xdebug-phpstorm/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/blog/xdebug-phpstorm/</guid>
+      <description>**This article was written for my employer Jump24, you can read the original source article here.
+It all started out with that oh-so-modern cause of a community backlash: the humble tweet.
+Source: https://twitter.com/derickr/status/1274134192155131905
+Quite the controversial “hot-take” from Derick, and while it certainly caused quite the stir (that it was probably designed to), it made me think. I thought, ‘Do I need to revisit Xdebug?’, and I realised that I’d fallen into Derick’s trap.</description>
+    </item>
     
     <item>
       <title>PsySh - More than just REPL</title>
-      <link>https://example.com/blog/psysh/</link>
+      <link>https://devtheatre.net/blog/psysh/</link>
       <pubDate>Sun, 29 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/psysh/</guid>
+      <guid>https://devtheatre.net/blog/psysh/</guid>
       <description>Most backend developers know about interactive modes, that certainly isn’t a secret.
 jimseconde@jim-amd-u18$: php -a
 jimseconde@jim-amd-u18$: node
@@ -25,22 +45,11 @@ All give you an active interpreter for that respective language. It’s used mos
     </item>
     
     <item>
-      <title>How to Build a Vue.js Shopify Frontend App with Polaris</title>
-      <link>https://example.com/blog/shopify-vue/</link>
-      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/blog/shopify-vue/</guid>
-      <description>This article was originally written by me for Eastside Co&amp;rsquo;s blog: you can find the original here
-Note: this article is about building a Vue.js single page app on top of the Laravel app created in this article. Before reading this, make sure you’ve read the previous article about building an app with Laravel as we’ll be using that existing code.
-What is Vue.js? Vue.js is a JavaScript front end framework, comparable to similar frameworks such as React and originally derived from AngularJS.</description>
-    </item>
-    
-    <item>
       <title>A Guide on How to Develop a Shopify App with Laravel &amp; PHP</title>
-      <link>https://example.com/blog/shopify-laravel/</link>
+      <link>https://devtheatre.net/blog/shopify-laravel/</link>
       <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/shopify-laravel/</guid>
+      <guid>https://devtheatre.net/blog/shopify-laravel/</guid>
       <description>This article was originally written by me for Eastside Co&amp;rsquo;s blog: you can find the original here
 The Shopify platform contains a whole host of built in functionality. However, thanks to its fully featured REST and GraphQL API access, it also has a thriving app store with a huge range of plug-ins designed to enhance Shopify store functionality in many ways. I&amp;rsquo;ll talk you through a Shopify app development tutorial to help you get started on making your own Shopify app, using the Laravel PHP framework.</description>
     </item>

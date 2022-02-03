@@ -2,41 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>culture on The Dev Theatre</title>
-    <link>https://example.com/tags/culture/</link>
+    <link>https://devtheatre.net/tags/culture/</link>
     <description>Recent content in culture on The Dev Theatre</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://devtheatre.net/tags/culture/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running and speaking at Online Events: what we’ve learned</title>
+      <link>https://devtheatre.net/blog/online-events/</link>
+      <pubDate>Tue, 09 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/blog/online-events/</guid>
+      <description>**This article was written for my employer Jump24, you can read the original source article .
+My start at Jump24 was never going to be straightforward – the United Kingdom was in full COVID-19 lockdown, bringing down tech meetups and conferences worldwide at the point when I was fully launching into a Developer Relations role, which would immediately have to be redefined to make our developer outreach work. But: we currently have a talk and live code demo session currently on tour – so how did we do it, and what experience have we gained?</description>
+    </item>
     
-	<atom:link href="https://example.com/tags/culture/index.xml" rel="self" type="application/rss+xml" />
-    
+    <item>
+      <title>A Fifth Pillar of Developer Relations</title>
+      <link>https://devtheatre.net/blog/ethics/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://devtheatre.net/blog/ethics/</guid>
+      <description>I don&amp;rsquo;t think anyone could have predicted how bad 2020 would end up, but it certainly brought to light some thinking about how I&amp;rsquo;d like Developer Relations to change.
+There is a specific reason for writing this article, but I realised that the topic it covered went a lot deeper, and exposes new trends in tech while raising some fairly important questions to consider both in Developer Relations and Web Development.</description>
+    </item>
     
     <item>
       <title>Virtual onboarding during the COVID-19 crisis - time costing</title>
-      <link>https://example.com/blog/onboarding-j24/</link>
+      <link>https://devtheatre.net/blog/onboarding-j24/</link>
       <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/onboarding-j24/</guid>
+      <guid>https://devtheatre.net/blog/onboarding-j24/</guid>
       <description>Almost every tech company is facing unprecedented challenges during the COVID-19 crisis, and at Jump24 it’s been no exception. The tech world has been switched to fully virtual overnight, which is bringing some very interesting debates forward (that I will discuss), most notably “how well is your business currently designed to deal with that?”
 I would argue that one of the biggest indicators of how well you’re set up to deal with this is onboarding new staff.</description>
     </item>
     
     <item>
       <title>Talk - The Politics of Tool Shaming</title>
-      <link>https://example.com/blog/tool-shaming/</link>
+      <link>https://devtheatre.net/blog/tool-shaming/</link>
       <pubDate>Sun, 20 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/tool-shaming/</guid>
+      <guid>https://devtheatre.net/blog/tool-shaming/</guid>
       <description>Most of us have heard it at some point. &amp;ldquo;WHAT? You use X framework/tool/OS/language?! So&amp;hellip; you&amp;rsquo;re a bad developer then?&amp;rdquo;
 I did not come from a Software Development background into this industry. I was an outsider, but it&amp;rsquo;s what I wanted to do my whole life. This is my story: how I refocused and retrained in my career to be confronted with a nightmare of gatekeeping, elistism and aggression. I saw what I thought was a problem, and I&amp;rsquo;d like to propose a solution.</description>
     </item>
     
     <item>
       <title>Beginning Journeys</title>
-      <link>https://example.com/blog/beginning-journeys/</link>
+      <link>https://devtheatre.net/blog/beginning-journeys/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/blog/beginning-journeys/</guid>
+      <guid>https://devtheatre.net/blog/beginning-journeys/</guid>
       <description>&lt;p&gt;Sparking up a career, a passion and a speciality.&lt;/p&gt;</description>
     </item>
     

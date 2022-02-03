@@ -1,56 +1,196 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	
-	<sitemap>
-	   	<loc>https://example.com/en/sitemap.xml</loc>
-		
-	   	<lastmod>2020-04-26T00:00:00+00:00</lastmod>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/fr/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/pl/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/pt/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/de/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/es/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/zh-cn/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/zh-tw/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/ja/sitemap.xml</loc>
-		
-	</sitemap>
-	
-	<sitemap>
-	   	<loc>https://example.com/nl/sitemap.xml</loc>
-		
-	</sitemap>
-	
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://devtheatre.net/blog/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/community/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/community/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/culture/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/culture/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/devrel/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/devrel/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/online-events/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/</loc>
+    <lastmod>2021-02-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/</loc>
+    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-021/</loc>
+    <lastmod>2021-01-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-020/</loc>
+    <lastmod>2020-12-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-019/</loc>
+    <lastmod>2020-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-018/</loc>
+    <lastmod>2020-09-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-017/</loc>
+    <lastmod>2020-09-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-016/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/ethics/</loc>
+    <lastmod>2020-08-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/about/</loc>
+    <lastmod>2020-08-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/docker/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/docker/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/php/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/php/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/on-meritocracy/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/xdebug-phpstorm/</loc>
+    <lastmod>2020-08-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-015/</loc>
+    <lastmod>2020-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-014/</loc>
+    <lastmod>2020-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/deno/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-theatre-podcast/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/javascript/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-013/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-theatre-podcast/dev-theatre-podcast-001/</loc>
+    <lastmod>2020-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-012/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/onboarding-j24/</loc>
+    <lastmod>2020-04-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-011/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-010/</loc>
+    <lastmod>2020-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-009/</loc>
+    <lastmod>2020-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-008/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-007/</loc>
+    <lastmod>2019-12-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-006/</loc>
+    <lastmod>2019-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/tool-shaming/</loc>
+    <lastmod>2019-10-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-005/</loc>
+    <lastmod>2019-10-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/devops/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/devops/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/laravel/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/laravel/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/psysh/</loc>
+    <lastmod>2019-09-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-004/</loc>
+    <lastmod>2019-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-003/</loc>
+    <lastmod>2019-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/beginning-journeys/</loc>
+    <lastmod>2019-07-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-002/</loc>
+    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/shopify-vue/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/javascript/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/shopify/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/shopify/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/vue/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/vue/</loc>
+    <lastmod>2019-06-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/dev-radio/dev-radio-001/</loc>
+    <lastmod>2019-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/shopify-laravel/</loc>
+    <lastmod>2019-05-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/blog/black-friday/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/tags/performance/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/categories/performance/</loc>
+    <lastmod>2019-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://devtheatre.net/contact/</loc>
+  </url>
+</urlset>

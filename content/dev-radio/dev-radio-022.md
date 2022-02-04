@@ -1,7 +1,7 @@
 +++
 title = "The Dev Radio Episode 022"
 author = "James Seconde"
-date = "2021-02-03"
+date = "2022-02-03"
 [[images]]
   src = "img/bowie-brum.jpeg"
   alt = "David Bowie Graffiti in Birmingham"

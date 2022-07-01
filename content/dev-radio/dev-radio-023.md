@@ -10,11 +10,11 @@ date = "2022-07-01"
 <AUDIO
     style="width:100%;"
     controls
-    src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+022.mp3">
-    https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+022.mp3
+    src="https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+023.mp3">
+    https://devtheatre.s3-eu-west-1.amazonaws.com/The+Dev+Radio+023.mp3
 </AUDIO>
 
-I've been meaning to do this for ages, so I'm going to release a couple of specials for the Dev Radio.
+I've been meaning to do this for ages. I'm going to release a couple of specials for the Dev Radio.
 
 It's probably my favourite fact that my last ever (hopefully) DJ gig was my best mates' wedding at a club venue in Ibiza.
 It was also hands-down my favourite gig I did. The crowd loved it and it was a joy to perform. I say 'perform',
@@ -25,11 +25,13 @@ When trying to be super-cool all the time behind the decks, it had never crossed
 this such fun was that (as you can see from the tracklisting) every single track and drop is a cheesy crowd pleasing banger. The 
 reaction was pretty much what you'd expect.
 
-There's also a scattering of samples and even some mashups, which were also all done live. It was exhausting to do live.
+There's also a scattering of samples and even some mashups, which were also all done live. It was exhausting.
 
 If you're wondering: the intro is a minute of years of shared friendship and in-jokes.
 
 It was also recorded. Enjoy.
+
+## BJs vs. EFF Ibiza Throwdown LIVE @ Elixir 2017
 
 ### Tracklist
 

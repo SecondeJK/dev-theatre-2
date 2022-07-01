@@ -61,7 +61,7 @@ disableLanguages        = []
       alt                 = "Jim by Norwich Artist Charli Vince"
 
   [params.sidebar]
-    about               = "Hi! I'm James. I do Developer Relations and Dev Experience stuff for Jump24 in Birmingham, UK."
+    about               = "Hi! I'm James. I do Developer Relations at Vonage."
     postAmount          = 5
     categories          = true
     categoriesByCount   = true

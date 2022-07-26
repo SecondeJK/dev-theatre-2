@@ -13,7 +13,7 @@ From Theatre Graduate, to QA, to SQL data analyst, to Business Intelligence Deve
 
 I founded Birmingham's current PHP usergroup, brumPHP, and host/co-run a quarterly tech conference, Fusion Birmingham led by and founded by the Fusion Group.
 
-I am a Senior Developer Advocate at Multinational Communications organisations Vonage / Ericsson.
+I am a Senior Developer Advocate at Multinational Communications organisation Vonage / Ericsson.
 
 I write and speak on PHP, Developer Culture and DevOps Tooling.
 
